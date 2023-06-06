@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "module": "esNext",
+    "target": "es6",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    // "noEmit": true,
+    "noEmitOnError": false,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "typeRoots": [
+      "./node_modules/@webgpu/types",
+      "./node_modules/@types"
+    ],
+    "incremental": true,
+    "noEmit": true
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts",
+    "src/pages/_app.js",
+    "src/pages/d3Test.js",
+    "src/pages/components/frontend/FlowGraph.js",
+    "src/pages/tensorStyle.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

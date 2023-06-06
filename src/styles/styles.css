@@ -1,0 +1,44 @@
+/* * {
+  box-sizing: border-box;
+  background: #c1bdbd;
+} */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(189, 181, 181);
+  color: #8b6f6f;
+  margin: 0;
+  padding: 0;
+}
+/* 
+body {
+  background: rgb(179, 176, 176);
+  color: #b1aeae;
+  font-family: 'Inconsolata', monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: #374348;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+main {
+  position: relative;
+  flex: 1;
+  height: 100vh;
+  overflow: auto;
+  background: rgb(200, 200, 200);
+  color: #191919;
+  margin: 0;
+  padding: 0;
+} */

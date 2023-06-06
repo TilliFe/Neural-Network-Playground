@@ -1,0 +1,44 @@
+[
+  {
+    "source": "4",
+    "sourceHandle": "Source",
+    "target": "6",
+    "targetHandle": "Right",
+    "id": "reactflow__edge-4Source-6Right"
+  },
+  {
+    "source": "5",
+    "sourceHandle": "Source",
+    "target": "6",
+    "targetHandle": "Left",
+    "id": "reactflow__edge-5Source-6Left"
+  },
+  {
+    "source": "0",
+    "sourceHandle": "Source",
+    "target": "1",
+    "targetHandle": "Single",
+    "id": "reactflow__edge-0Source-1Single"
+  },
+  {
+    "source": "1",
+    "sourceHandle": "Source",
+    "target": "2",
+    "targetHandle": "Single",
+    "id": "reactflow__edge-1Source-2Single"
+  },
+  {
+    "source": "2",
+    "sourceHandle": "Source",
+    "target": "3",
+    "targetHandle": "Single",
+    "id": "reactflow__edge-2Source-3Single"
+  },
+  {
+    "source": "3",
+    "sourceHandle": "Source",
+    "target": "4",
+    "targetHandle": "Single",
+    "id": "reactflow__edge-3Source-4Single"
+  }
+]
