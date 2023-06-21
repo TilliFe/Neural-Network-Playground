@@ -28,4 +28,4 @@ Any changes you make to the code will automatically be reflected in the browser 
 ## About
 CoViz is built as part of my bachelor's thesis. The thesis covers the theoretical foundations of building a deep learning framework, including computation graphs and automatic differentiation. You can read my thesis <a href="./public/CoViz_Thesis.pdf" download>here</a>.
 
-Big thanks to my supervisor [Diaeldin Taha](https://www.linkedin.com/in/diaaeldin-taha-23a51b16/) for his excellent guidance and inspiring conversations. 🙏
+Big thanks to my supervisor [Dr. Diaeldin Taha](https://www.linkedin.com/in/diaaeldin-taha-23a51b16/) for his excellent guidance and inspiring conversations. 🙏
