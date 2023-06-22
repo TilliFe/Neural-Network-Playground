@@ -18,6 +18,6 @@ fn pd_MSE(gId : vec3u, t : u32, currParent : u32){
     }
 
     let index = gId.y + gId.x * parentTrue_n;
-    ping.entries[currPd_parentTrue + index] = (f32(2) / ( f32(parentTrue_n) * f32(parentTrue_m))) * ( ping.entries[parentPred_dataFirstIndex + index] - ping.entries[parentTrue_dataFirstIndex + index] );
-    ping.entries[currPd_parentPred + index] = (f32(2) / ( f32(parentTrue_n) * f32(parentTrue_m))) * ( ping.entries[parentPred_dataFirstIndex + index] - ping.entries[parentTrue_dataFirstIndex + index] );
+    ping.entries[currPd_parentTrue + index] = (f32(2) / ( f32(parentTrue_m))) * ( ping.entries[parentPred_dataFirstIndex + index] - ping.entries[parentTrue_dataFirstIndex + index] );
+    ping.entries[currPd_parentPred + index] = (f32(2) / ( f32(parentTrue_m))) * ( ping.entries[parentPred_dataFirstIndex + index] - ping.entries[parentTrue_dataFirstIndex + index] );
 }

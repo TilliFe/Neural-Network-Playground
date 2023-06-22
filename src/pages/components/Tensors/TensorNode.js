@@ -59,19 +59,19 @@ function TensorNode({ data, isConnectable, id, modelId }) {
   const [iterations, setIterations] = useState(2000);
   const [learningRate, setLearningRate] =
     predefinedModel === 'Regression1'
-      ? useState(0.1)
+      ? useState(0.01)
       : predefinedModel === 'Classification1'
-      ? useState(3)
+      ? useState(0.5)
       : useState(0.01);
   const [momentum, setMomentum] =
     predefinedModel === 'Regression1'
-      ? useState(0.98)
+      ? useState(0.96)
       : predefinedModel === 'Classification1'
-      ? useState(0.98)
+      ? useState(0.9)
       : useState(0.9);
   const [batchSize, setBatchSize] =
     predefinedModel === 'Regression1'
-      ? useState(32)
+      ? useState(64)
       : predefinedModel === 'Classification1'
       ? useState(48)
       : useState(1);
