@@ -60,9 +60,11 @@ const addGradients =
 import updateData from '../wgsl_operations/updateDataOperations/updateData.wgsl';
 
 // main function import
+
 import main from '../wgsl_operations/main.wgsl';
 
 // others
+
 import { getxValues } from './testSet.js';
 import { getPredValues } from './testSet.js';
 import { getTrueValues } from './testSet.js';
@@ -124,6 +126,7 @@ export async function MatMul(
       GPUBufferUsage.COPY_SRC |
       GPUBufferUsage.COPY_DST,
   });
+
   const arrayBufferFlatData = gpuBufferFlatData.getMappedRange();
   new Float32Array(arrayBufferFlatData).set(FlatData);
   gpuBufferFlatData.unmap();

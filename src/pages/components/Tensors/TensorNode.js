@@ -52,28 +52,28 @@ function TensorNode({ data, isConnectable, id, modelId }) {
   const [addBias, setAddBias] = useState(data.addBias);
   const [dataSet, setDataSet] =
     predefinedModel === 'Regression1'
-      ? useState('easy_regr.')
+      ? useState('medium_regr.')
       : predefinedModel === 'Classification1'
       ? useState('easy_class.')
       : useState('');
   const [iterations, setIterations] = useState(2000);
   const [learningRate, setLearningRate] =
     predefinedModel === 'Regression1'
-      ? useState(0.01)
+      ? useState(0.1)
       : predefinedModel === 'Classification1'
-      ? useState(0.003)
-      : useState(0.001);
+      ? useState(3)
+      : useState(0.01);
   const [momentum, setMomentum] =
     predefinedModel === 'Regression1'
       ? useState(0.98)
       : predefinedModel === 'Classification1'
-      ? useState(0.9)
-      : useState(0.0);
+      ? useState(0.98)
+      : useState(0.9);
   const [batchSize, setBatchSize] =
     predefinedModel === 'Regression1'
-      ? useState(128)
+      ? useState(32)
       : predefinedModel === 'Classification1'
-      ? useState(98)
+      ? useState(48)
       : useState(1);
   const [displayedDataType, setShowDisplayedDataType] =
     predefinedModel === 'Regression1'
@@ -201,7 +201,7 @@ function TensorNode({ data, isConnectable, id, modelId }) {
   const clickButton = () => {
     setLastTensor();
     setTemp(temp + 1);
-    setIsTraining(true);
+    // setIsTraining(true);
   };
 
   const clickBreakTraining = () => {
@@ -420,7 +420,7 @@ function TensorNode({ data, isConnectable, id, modelId }) {
               sx={{
                 height: '0.2px',
                 width: '100%',
-                backgroundColor: 'rgba(100,100,100,0.3)',
+                backgroundColor: 'rgba(100,100,100,3)',
                 marginTop: '7px',
                 marginBottom: '2px',
               }}

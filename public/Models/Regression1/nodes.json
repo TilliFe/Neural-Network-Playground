@@ -52,7 +52,7 @@
     "data": {
       "type": "Dense",
       "initialization": "zeros",
-      "rows": 128,
+      "rows": 64,
       "cols": 1,
       "requiresGradient": true,
       "parents": [],
@@ -61,7 +61,7 @@
       "isTrue": false,
       "isInput": false,
       "isOutput": false,
-      "metaDims": [128],
+      "metaDims": [64],
       "addBias": true
     },
     "width": 275,

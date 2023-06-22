@@ -17,5 +17,5 @@ fn pd_softmaxCE(gId : vec3u, t : u32, currParent : u32){
     }
 
     let index = gId.y + gId.x * parentTrue_n;
-    ping.entries[parentPred_pdSingle + index] =  (ping.entries[parentPred_dataFirstIndex + index] - ping.entries[parentTrue_dataFirstIndex + index]);
+    ping.entries[parentPred_pdSingle + index] = (f32(1) / f32(parentTrue_n)) * (ping.entries[parentPred_dataFirstIndex + index] - ping.entries[parentTrue_dataFirstIndex + index]);
 }

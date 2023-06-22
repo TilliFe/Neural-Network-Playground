@@ -22,7 +22,7 @@ fn MSETensor(gId : vec3u, t : u32){
             mse += pow(ping.entries[indexPred] - ping.entries[indexTrue] , f32(2));
         }
     }
-    mse = mse / f32(parentTrue_n);
+    mse = mse / ( f32(parentTrue_n) * f32(parentTrue_m));
     ping.entries[curr_DataFirstIndex] = mse;
 
     let currIteration = u32(control.iteration);

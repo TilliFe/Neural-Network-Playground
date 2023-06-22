@@ -123,7 +123,7 @@ function SetUpData() {
             ) // divide each value by 255
         );
 
-        const data = new Data(dataArray, 2, 19000, 1, 1, batchSize);
+        const data = new Data(dataArray, 2, 10000, 1, 1, batchSize);
         data.dataSetName = 'simple_sine';
 
         setUpModel(
@@ -200,7 +200,7 @@ function SetUpData() {
           )
         );
 
-        const data = new Data(dataArray, 2, 19000, 2, 2, batchSize);
+        const data = new Data(dataArray, 2, 10000, 2, 2, batchSize);
         data.dataSetName = 'classify';
         setUpModel(
           setAvgError,
