@@ -41,19 +41,6 @@ async function fetchEdges(modelName) {
   }
 }
 
-// async function fetchCompGraph(modelName) {
-//   if (modelName === '') {
-//     return [];
-//   }
-//   try {
-//     const response = await fetch('/Models/' + modelName + '/compGraph.json');
-//     const compGraph = await response.json();
-//     return compGraph;
-//   } catch (error) {
-//     return [];
-//   }
-// }
-
 const rfStyle = {
   backgroundColor: 'rgb(255,255,255)',
 };
@@ -650,7 +637,7 @@ export default function Flow() {
   );
 
   return (
-    <div style={{ width: '100%', height: '100%' }}>
+    <div style={{ height: '100%', width: '100%' }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}

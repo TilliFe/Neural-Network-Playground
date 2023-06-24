@@ -5,7 +5,7 @@ import Drawer from '@mui/material/Drawer';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
+// import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
@@ -71,7 +71,8 @@ const AppBar = styled(MuiAppBar, {
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  padding: theme.spacing(0, 1),
+  padding: 0,
+  margin: 0,
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
   justifyContent: 'flex-end',
@@ -97,7 +98,7 @@ export default function PersistentDrawerLeft() {
             <AppBar
               position="fixed"
               open={open}
-              sx={{ bgcolor: 'rgb(40,40,40)', border: '0px', color: 'white' }}
+              sx={{ border: '0px', color: 'white', bgcolor: 'rgb(40,40,40)' }}
             >
               <Toolbar>
                 <IconButton
@@ -107,13 +108,17 @@ export default function PersistentDrawerLeft() {
                   edge="start"
                   sx={{ mr: 1, ...(open && { display: 'none' }) }}
                 >
-                  <MenuIcon sx={{ color: 'rgb(200,200,200)' }} />
+                  <MenuIcon sx={{ color: 'rgb(230,230,230)' }} />
                 </IconButton>
                 <Typography
                   variant="h6"
                   component="div"
                   noWrap
-                  sx={{ color: 'rgb(200,200,200)', width: 100, fontSize: 30 }}
+                  sx={{
+                    color: 'rgb(230,230,230)',
+                    width: '100%',
+                    fontSize: 30,
+                  }}
                 >
                   CoViz
                 </Typography>
@@ -122,9 +127,11 @@ export default function PersistentDrawerLeft() {
             <Drawer
               sx={{
                 width: drawerWidth,
-                flexShrink: 0,
+
+                flexShrink: 1,
                 '& .MuiDrawer-paper': {
                   width: drawerWidth,
+                  height: '100vh',
                   boxSizing: 'border-box',
                   color: 'white',
                 },
@@ -147,16 +154,13 @@ export default function PersistentDrawerLeft() {
                   )}
                 </IconButton>
               </DrawerHeader>
-              <Divider style={{ bgcolor: 'red' }} />
+              {/* <Divider style={{ bgcolor: 'red' }} /> */}
               <SelectModel />
             </Drawer>
-            <Main open={open}>
-              <DrawerHeader
-                sx={{ height: '100vh', width: '100vw', margin: 0, padding: 0 }}
-              >
-                <Flow />
-                <SetUpData />
-              </DrawerHeader>
+            <Main open={open} style={{ height: '100vh' }}>
+              {/* <DrawerHeader /> */}
+              <Flow />
+              <SetUpData />
             </Main>
           </Box>
         </ThemeProvider>
