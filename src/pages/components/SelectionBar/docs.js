@@ -9,21 +9,22 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '70%',
-  height: '70%',
+  width: '90%',
+  height: '50%',
   bgcolor: 'background.paper',
   border: '2px solid #000',
-  pt: 2,
-  px: 4,
-  pb: 3,
+  pt: 1,
+  px: 1,
+  pb: 1,
   borderRadius: '15px',
   border: '2px solid rgb(50,50,80)',
   overflow: 'auto',
-  margin: '20px',
+  // margin: '10%',
+  padding: '10px',
 
   // q: change the scrollbar width
   '&::-webkit-scrollbar': {
-    width: '10px',
+    width: '1px',
   },
 };
 
@@ -40,11 +41,11 @@ export default function NestedModal() {
     <div>
       <Typography
         variant="body1"
-        color="grey.500"
+        color="grey.300"
         textAlign="left"
         position="absolute"
         bottom="14px"
-        width="245px"
+        width="90%"
         padding="25px"
       >
         <Button
@@ -55,10 +56,10 @@ export default function NestedModal() {
             color: 'rgb(255,255,255)',
             backgroundColor: 'rgb(60,60,100)',
             borderRadius: '20px',
-            fontSize: '17px',
+            fontSize: '15px',
           }}
         >
-          First Steps
+          CoViz Docs
         </Button>
       </Typography>
       <Modal
@@ -74,16 +75,17 @@ export default function NestedModal() {
             component="h2"
             sx={{
               color: 'rgb(140,0,100)',
-              margin: '30px',
+              margin: '10px',
               marginBottom: '40px',
             }}
           >
-            CoViz - First Steps
+            <p>CoViz</p>
+            First Steps
             <Typography
               id="modal-modal-title"
               variant="h5"
               component="h2"
-              sx={{ marginTop: '10px' }}
+              sx={{ marginTop: '10px', padding: 0 }}
             >
               Built with WebGPU, CoViz is a visual playground for building and
               training Neural Networks.
@@ -94,7 +96,7 @@ export default function NestedModal() {
               id="modal-modal-title"
               variant="h4"
               component="h2"
-              sx={{ margin: '30px' }}
+              sx={{ margin: '10px', marginTop: '30px' }}
             >
               Enabling WebGPU
               <Typography id="modal-modal-title" variant="h6" component="h2">
@@ -107,7 +109,7 @@ export default function NestedModal() {
               id="modal-modal-title"
               variant="h4"
               component="h2"
-              sx={{ margin: '30px' }}
+              sx={{ margin: '10px', marginTop: '30px' }}
             >
               Getting started
               <Typography id="modal-modal-title" variant="h6" component="h2">
@@ -128,7 +130,7 @@ export default function NestedModal() {
               id="modal-modal-title"
               variant="h4"
               component="h2"
-              sx={{ margin: '30px' }}
+              sx={{ margin: '10px', marginTop: '30px' }}
             >
               How to build your own Neural Network
               <Typography id="modal-modal-title" variant="h6" component="h2">
@@ -151,7 +153,7 @@ export default function NestedModal() {
               id="modal-modal-title"
               variant="h4"
               component="h2"
-              sx={{ margin: '30px' }}
+              sx={{ margin: '10px', marginTop: '30px' }}
             >
               What if you encounter a deadlock?
               <Typography id="modal-modal-title" variant="h6" component="h2">

@@ -6,7 +6,7 @@ import ReactFlow, {
   applyEdgeChanges,
   applyNodeChanges,
   Background,
-  MiniMap,
+  // MiniMap,
 } from 'reactflow';
 // import { project } from 'react-flow-renderer';
 import 'reactflow/dist/style.css';
@@ -671,7 +671,7 @@ export default function Flow() {
         // attributionPosition="top-left"
       >
         <Background color="rgba(200,200,200,0.45)" size="3" variant={variant} />
-        <MiniMap />
+        {/* <MiniMap /> */}
       </ReactFlow>
     </div>
   );

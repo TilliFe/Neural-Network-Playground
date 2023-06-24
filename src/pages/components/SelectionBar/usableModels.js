@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import { Paper } from '@mui/material';
+import AddIcon from '@mui/icons-material/Add';
+import { Box } from '@mui/material';
 
 import { useDispatch } from 'react-redux';
 import { computeGraphActions } from '../../../store/ComputeGraph-slice';
 import Typography from '@mui/material/Typography';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const buttonStyles = {
-  height: '54px',
+  height: '53px',
   borderRadius: '8px',
   backgroundColor: 'rgb(55,55,55)',
   color: 'rgb(255,255,255)',
@@ -39,15 +43,15 @@ const SelectModel = () => {
     setClickedButton(buttonNumber);
   };
 
-  const [open, setOpen] = useState(false);
-
-  const handleDocs = () => {
-    setOpen(!open);
-  };
-
   return (
-    <div>
-      <Stack direction="column">
+    <Paper
+      style={{
+        backgroundColor: 'rgb(40,40,40)',
+        height: '100vh',
+        borderRadius: 0,
+      }}
+    >
+      <Stack style={{ height: '65%', overflow: 'auto' }} direction="column">
         <Button
           variant="contained"
           onClick={() => {
@@ -62,12 +66,24 @@ const SelectModel = () => {
               clickedButton === 0
                 ? 'rgb(90,90,90)'
                 : buttonStyles.backgroundColor,
-            border: 'solid 2px rgb(155,150,150)',
-            height: '65px',
+            border: 'solid 0px rgb(155,150,150)',
+            height: '53px',
+            paddingLeft: '25px',
           }}
+          startIcon={<AddIcon />}
         >
-          New Model
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'flex-start',
+              width: '100%',
+              paddingLeft: '3px',
+            }}
+          >
+            New Model
+          </Box>
         </Button>
+
         <Button
           variant="contained"
           onClick={() => {
@@ -84,7 +100,16 @@ const SelectModel = () => {
                 : buttonStyles.backgroundColor,
           }}
         >
-          Regression Model 1
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'flex-start',
+              width: '100%',
+              paddingLeft: '3px',
+            }}
+          >
+            Regression Model 1
+          </Box>
         </Button>
         <Button
           variant="contained"
@@ -100,86 +125,64 @@ const SelectModel = () => {
                 : buttonStyles.backgroundColor,
           }}
         >
-          Classification Model 1
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'flex-start',
+              width: '100%',
+              paddingLeft: '3px',
+            }}
+          >
+            Classification Model 1
+          </Box>
         </Button>
       </Stack>
+      <Stack style={{ height: '27%', overflow: 'auto' }} direction="column">
+        <Typography color="grey.500" padding="3px" margin="8px" fontSize="13px">
+          You need to enable <strong style={{ color: 'white' }}>WebGPU</strong>{' '}
+          in your browser flags!
+        </Typography>
 
-      <Typography
-        variant="body1"
-        color="grey.500"
-        textAlign="left"
-        position="absolute"
-        bottom="330px"
-        width="230px"
-        padding="25px"
-      >
-        You need to enable <strong style={{ color: 'white' }}>WebGPU</strong> in
-        your browser flags!
-      </Typography>
+        <Typography color="grey.500" padding="3px" margin="8px" fontSize="13px">
+          <strong>Add</strong> a Tensor Node by &apos;Left Click&apos; +
+          &apos;Ctrl&apos;
+        </Typography>
 
-      <Typography
-        variant="body1"
-        color="grey.500"
-        textAlign="left"
-        position="absolute"
-        bottom="260px"
-        width="230px"
-        padding="25px"
-      >
-        <strong>Add</strong> a Tensor Node by &apos;Left Click&apos; +
-        &apos;Ctrl&apos;
-      </Typography>
+        <Typography color="grey.500" padding="3px" margin="8px" fontSize="13px">
+          <strong>Connect</strong> two Nodes by dragging from one Node to
+          another
+        </Typography>
 
-      <Typography
-        variant="body1"
-        color="grey.500"
-        textAlign="left"
-        position="absolute"
-        bottom="170px"
-        width="230px"
-        padding="25px"
-      >
-        <strong>Connect</strong> two Nodes by dragging from one Node to another
-      </Typography>
+        <Typography color="grey.500" padding="3px" margin="8px" fontSize="13px">
+          <strong>Remove</strong> any Tensor Node or Edge between Nodes by
+          double &apos;Left Click&apos; on it.
+        </Typography>
 
-      <Typography
-        variant="body1"
-        color="grey.500"
-        textAlign="left"
-        position="absolute"
-        bottom="80px"
-        width="230px"
-        padding="25px"
-      >
-        <strong>Remove</strong> any Tensor Node or Edge between Nodes by double
-        &apos;Left Click&apos; on it.
-      </Typography>
+        <Typography color="grey.500" padding="3px" margin="8px"></Typography>
+      </Stack>
 
-      <Typography
-        variant="body1"
-        color="grey.500"
-        textAlign="left"
-        position="absolute"
-        bottom="20px"
-        width="245px"
-        padding="25px"
+      <Button
+        onClick={() =>
+          window.open(
+            'https://github.com/TilliFe/CoViz-Neural-Network-Playground'
+          )
+        }
+        variant="contained"
+        sx={{
+          position: 'relative',
+          width: '270px',
+          height: '48px',
+          color: 'rgb(255,255,255)',
+          backgroundColor: 'rgb(60,50,70)',
+          borderRadius: '10px',
+          fontSize: '15px',
+          margin: '12px',
+        }}
+        startIcon={<GitHubIcon />}
       >
-        <Button
-          onClick={handleDocs}
-          variant="contained"
-          sx={{
-            width: '100%',
-            color: 'rgb(250,250,250)',
-            backgroundColor: 'rgb(50,50,80)',
-            borderRadius: '20px',
-          }}
-        >
-          Documentation
-        </Button>
-      </Typography>
-      {/* 
-      <NestedModal /> */}
-    </div>
+        GitHub Docs
+      </Button>
+    </Paper>
   );
 };
 

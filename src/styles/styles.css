@@ -7,11 +7,12 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: rgb(189, 181, 181);
-  color: #8b6f6f;
+  background: rgb(40, 40, 40);
+  color: #313131;
   margin: 0;
   padding: 0;
 }
+
 /* 
 body {
   background: rgb(179, 176, 176);

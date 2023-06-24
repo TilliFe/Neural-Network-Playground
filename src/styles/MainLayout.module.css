@@ -1,6 +1,8 @@
 .container {
   padding-left: 0px;
   padding-right: 0px;
+  padding: 0;
+  margin: 0;
   background: #1f1f1f;
 }
 
@@ -12,7 +14,7 @@
   position: relative;
   left: 0px;
   flex: 1;
-  max-width: 300px;
+  max-width: 100vw;
   height: 100vh;
   overflow: auto;
   background: #1f1f1f;
@@ -36,7 +38,7 @@
   float: right;
   width: 36px;
   height: 36px;
-  margin-top: -0.25em;
+  /* margin-top: -0.25em; */
   background-image: url(../../public/menu.svg);
   background-size: cover;
 }

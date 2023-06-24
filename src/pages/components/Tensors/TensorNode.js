@@ -320,7 +320,7 @@ function TensorNode({ data, isConnectable, id, modelId }) {
           (displayedDataType == 'regr2D' || displayedDataType == 'classy2D')
         ? '574px'
         : type == 'CE' || type == 'MSE'
-        ? '612px'
+        ? '622px'
         : type == 'ReLU' || type == 'softmax'
         ? '186px'
         : type == 'Dense'
@@ -730,6 +730,36 @@ function TensorNode({ data, isConnectable, id, modelId }) {
             ) : displayedDataType == 'classy2D' ? (
               <ClassifyPlot />
             ) : null}
+            <div style={{ display: 'flex', marginLeft: '20px' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginRight: 24,
+                }}
+              >
+                <div
+                  style={{
+                    width: 10,
+                    height: 10,
+                    backgroundColor: 'rgb(20,140,250)',
+                    marginRight: 4,
+                  }}
+                />
+                <span>Input Data</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
+                <div
+                  style={{
+                    width: 10,
+                    height: 10,
+                    backgroundColor: 'rgb(250,150,20)',
+                    marginRight: 4,
+                  }}
+                />
+                <span>True Values</span>
+              </div>
+            </div>
           </>
         ) : null}
 

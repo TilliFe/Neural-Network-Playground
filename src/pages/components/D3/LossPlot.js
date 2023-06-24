@@ -83,5 +83,28 @@ export default function LossPLot() {
       .call(d3.axisLeft(yScale));
   }, [data]);
 
-  return <svg ref={ref} width={width} height={height} />;
+  return (
+    <>
+      <svg ref={ref} width={width} height={height} />
+      <div style={{ display: 'flex', marginLeft: '20px' }}>
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            marginRight: 24,
+          }}
+        >
+          <div
+            style={{
+              width: 10,
+              height: 10,
+              backgroundColor: 'rgb(0,0,0)',
+              marginRight: 4,
+            }}
+          />
+          <span>Average Loss per Iteration</span>
+        </div>
+      </div>
+    </>
+  );
 }
