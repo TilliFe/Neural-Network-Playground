@@ -730,34 +730,34 @@ function TensorNode({ data, isConnectable, id, modelId }) {
             ) : displayedDataType == 'classy2D' ? (
               <ClassifyPlot />
             ) : null}
-            <div style={{ display: 'flex', marginLeft: '20px' }}>
+            <div style={{ display: 'flex', margin: 2, marginLeft: '20px' }}>
               <div
                 style={{
                   display: 'flex',
                   alignItems: 'center',
-                  marginRight: 24,
+                  marginRight: 40,
                 }}
               >
                 <div
                   style={{
-                    width: 10,
-                    height: 10,
+                    width: 6,
+                    height: 6,
                     backgroundColor: 'rgb(20,140,250)',
-                    marginRight: 4,
+                    margin: 7,
                   }}
                 />
-                <span>Input Data</span>
+                <span style={{ fontSize: '10px' }}>Input Data</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <div
                   style={{
-                    width: 10,
-                    height: 10,
+                    width: 6,
+                    height: 6,
                     backgroundColor: 'rgb(250,150,20)',
-                    marginRight: 4,
+                    margin: 7,
                   }}
                 />
-                <span>True Values</span>
+                <span style={{ fontSize: '10px' }}>True Values</span>
               </div>
             </div>
           </>

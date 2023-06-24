@@ -29,6 +29,8 @@ export default function LossPLot() {
     setData((data) => [...data, newError]); // spread the old array and add the new object
   }, [avgError]);
 
+  const framerate = 20; // keep in mind that this value has to be the same as in the GPUTraining.js component !
+
   useEffect(() => {
     if (data.length < 5) {
       return;
@@ -70,9 +72,12 @@ export default function LossPLot() {
       .attr('transform', `translate(0, ${height - margin.bottom})`)
       .attr('stroke-width', '0.5')
       .style('font', '7px sans-serif')
-      // .style("color", "blue")
-      // .style("stroke", "red")
-      .call(d3.axisBottom(xScale));
+      .call(
+        d3.axisBottom(xScale).tickFormat((d) => {
+          // Format the tick value based on batchSize
+          return d * framerate;
+        })
+      );
 
     // Append y-axis
     svg
@@ -96,13 +101,14 @@ export default function LossPLot() {
         >
           <div
             style={{
-              width: 10,
-              height: 10,
+              width: 6,
+              height: 6,
               backgroundColor: 'rgb(0,0,0)',
-              marginRight: 4,
+              margin: 4,
+              marginLeft: 0,
             }}
           />
-          <span>Average Loss per Iteration</span>
+          <span style={{ fontSize: '10px' }}>Average Loss per Iteration</span>
         </div>
       </div>
     </>

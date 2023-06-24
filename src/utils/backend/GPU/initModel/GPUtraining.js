@@ -338,16 +338,15 @@ export async function MatMul(
   if (model.batchSize < 50) {
     numExtraIterations = 10;
   } else if (model.batchSize < 100) {
-    numExtraIterations = 6;
+    numExtraIterations = 5;
   } else if (model.batchSize < 200) {
     numExtraIterations = 2;
   }
-  const framerate = 50;
+  const framerate = 20;
 
   for (
     let iteration = 0;
-    iteration <
-    numIterations + Math.floor(numIterations / framerate) * numExtraIterations;
+    iteration < numIterations + 2 * framerate;
     iteration++
   ) {
     if (stopLearning.current) {
