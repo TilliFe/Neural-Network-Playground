@@ -7,8 +7,7 @@ CoViz is one of the first projects to use WebGPU 🔥 to implement a fully diffe
 ## Demo
 You can try out CoViz by visiting the live demo at https://covizdemo.vercel.app/.
 
-<!-- ![image](https://github.com/TilliFe/CoViz/assets/93252915/f02915db-95de-4da1-a6c4-9e5b3a1e56f0) -->
-![image](https://github.com/TilliFe/CoViz/assets/93252915/8d125201-54b3-4dc1-afb3-f0a305ffc6fa)
+<img width="1368" alt="image" src="https://github.com/TilliFe/CoViz-Neural-Network-Playground/assets/93252915/394f75a6-722c-4966-981b-037e0b0ffaf5">
 > CoViz's user interface features a node editor, powered by ReactFlow, that allows users to easily build a neural network computation graph. Users can select from a range of regression and classification tasks and datasets, and train their network to learn patterns in the data.
 
 
