@@ -331,7 +331,7 @@ function TensorNode({ data, isConnectable, id, modelId }) {
         ? '186px'
         : '330px', // if none
     width: '250px',
-    border: '1px solid rgb(160,160,180)',
+    border: '2px solid rgb(160,160,160)',
     borderRadius: '10px',
     background: 'rgba(250,250,250,1.0)',
     padding: '10px',
@@ -730,36 +730,79 @@ function TensorNode({ data, isConnectable, id, modelId }) {
             ) : displayedDataType == 'classy2D' ? (
               <ClassifyPlot />
             ) : null}
-            <div style={{ display: 'flex', margin: 2, marginLeft: '20px' }}>
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  marginRight: 40,
-                }}
-              >
+            {/* <div style={{ display: 'flex', margin: 2, marginLeft: '20px' }}> */}
+            {displayedDataType == 'regr2D' ? (
+              <div style={{ display: 'flex', margin: 2, marginLeft: '20px' }}>
                 <div
                   style={{
-                    width: 6,
-                    height: 6,
-                    backgroundColor: 'rgb(20,140,250)',
-                    margin: 7,
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginRight: 40,
                   }}
-                />
-                <span style={{ fontSize: '10px' }}>Input Data</span>
+                >
+                  <div
+                    style={{
+                      width: 6,
+                      height: 6,
+                      backgroundColor: 'rgb(20,140,250)',
+                      margin: 7,
+                    }}
+                  />
+                  <span style={{ fontSize: '10px' }}>Prediction</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                  <div
+                    style={{
+                      width: 6,
+                      height: 6,
+                      backgroundColor: 'rgb(250,150,20)',
+                      margin: 7,
+                    }}
+                  />
+                  <span style={{ fontSize: '10px' }}>True Values</span>
+                </div>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center' }}>
-                <div
-                  style={{
-                    width: 6,
-                    height: 6,
-                    backgroundColor: 'rgb(250,150,20)',
-                    margin: 7,
-                  }}
-                />
-                <span style={{ fontSize: '10px' }}>True Values</span>
-              </div>
-            </div>
+            ) : displayedDataType == 'classy2D' ? (
+              <>
+                <div style={{ display: 'flex', margin: 2, marginLeft: '20px' }}>
+                  <div style={{ display: 'flex' }}>
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        marginRight: 40,
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: 6,
+                          height: 6,
+                          backgroundColor: 'rgb(20,140,250)',
+                          margin: 7,
+                        }}
+                      />
+                      <span style={{ fontSize: '10px' }}>Label 0</span>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <div
+                        style={{
+                          width: 6,
+                          height: 6,
+                          backgroundColor: 'rgb(250,150,20)',
+                          margin: 7,
+                        }}
+                      />
+                      <span style={{ fontSize: '10px' }}>Label 1</span>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ alignItems: 'center', marginLeft: 25 }}>
+                  <span style={{ fontSize: '11px' }}>
+                    Dots: Precictions, Voronoi: True Values
+                  </span>
+                </div>
+              </>
+            ) : null}
           </>
         ) : null}
 

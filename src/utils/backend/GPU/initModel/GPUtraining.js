@@ -346,7 +346,7 @@ export async function MatMul(
 
   for (
     let iteration = 0;
-    iteration < numIterations + 2 * framerate;
+    iteration < numIterations + 3 * framerate;
     iteration++
   ) {
     if (stopLearning.current) {
@@ -505,12 +505,16 @@ export async function MatMul(
       for (let error of errorsArray) {
         avgError += error;
       }
-      avgError /= errorsArray.length;
+      if (errorsArray.length > 0) {
+        avgError /= errorsArray.length;
+      }
 
-      await setPredVals(predVals);
-      await setTrueVals(trueVals);
-      await setAvgError(avgError);
-      await setXVals(xVals);
+      if (iteration >= framerate - 1) {
+        await setPredVals(predVals);
+        await setTrueVals(trueVals);
+        await setAvgError(avgError);
+        await setXVals(xVals);
+      }
 
       predValues_all = [];
       trueValues_all = [];

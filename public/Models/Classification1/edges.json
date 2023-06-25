@@ -4,41 +4,47 @@
     "sourceHandle": "Source",
     "target": "6",
     "targetHandle": "Right",
-    "id": "reactflow__edge-4Source-6Right"
+    "id": "reactflow__edge-4Source-6Right",
+    "type": "custom"
   },
   {
     "source": "5",
     "sourceHandle": "Source",
     "target": "6",
     "targetHandle": "Left",
-    "id": "reactflow__edge-5Source-6Left"
+    "id": "reactflow__edge-5Source-6Left",
+    "type": "custom"
   },
   {
     "source": "0",
     "sourceHandle": "Source",
     "target": "1",
     "targetHandle": "Single",
-    "id": "reactflow__edge-0Source-1Single"
+    "id": "reactflow__edge-0Source-1Single",
+    "type": "custom"
   },
   {
     "source": "1",
     "sourceHandle": "Source",
     "target": "2",
     "targetHandle": "Single",
-    "id": "reactflow__edge-1Source-2Single"
+    "id": "reactflow__edge-1Source-2Single",
+    "type": "custom"
   },
   {
     "source": "2",
     "sourceHandle": "Source",
     "target": "3",
     "targetHandle": "Single",
-    "id": "reactflow__edge-2Source-3Single"
+    "id": "reactflow__edge-2Source-3Single",
+    "type": "custom"
   },
   {
     "source": "3",
     "sourceHandle": "Source",
     "target": "4",
     "targetHandle": "Single",
-    "id": "reactflow__edge-3Source-4Single"
+    "id": "reactflow__edge-3Source-4Single",
+    "type": "custom"
   }
 ]

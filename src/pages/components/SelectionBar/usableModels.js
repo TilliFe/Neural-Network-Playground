@@ -13,7 +13,7 @@ import Grid from '@mui/material/Grid';
 const buttonStyles = {
   height: '53px',
   borderRadius: '8px',
-  backgroundColor: 'rgb(55,55,55)',
+  backgroundColor: 'rgb(70,70,70)',
   color: 'rgb(255,255,255)',
   marginLeft: '10px',
   marginRight: '10px',
@@ -21,7 +21,7 @@ const buttonStyles = {
   fontSize: '16px',
 
   '&:hover': {
-    backgroundColor: 'rgb(80,80,80)',
+    backgroundColor: 'rgb(130,130,130)',
   },
 };
 
@@ -74,7 +74,7 @@ const SelectModel = () => {
               ...buttonStyles,
               backgroundColor:
                 clickedButton === 0
-                  ? 'rgb(90,90,90)'
+                  ? 'rgb(110,110,110)'
                   : buttonStyles.backgroundColor,
               border: 'solid 0px rgb(155,150,150)',
               height: '53px',
@@ -106,7 +106,7 @@ const SelectModel = () => {
               ...buttonStyles,
               backgroundColor:
                 clickedButton === 1
-                  ? 'rgb(90,90,90)'
+                  ? 'rgb(110,110,110)'
                   : buttonStyles.backgroundColor,
             }}
           >
@@ -131,7 +131,7 @@ const SelectModel = () => {
               ...buttonStyles,
               backgroundColor:
                 clickedButton === 2
-                  ? 'rgb(100,96,100)'
+                  ? 'rgb(110,110,110)'
                   : buttonStyles.backgroundColor,
             }}
           >
@@ -170,8 +170,8 @@ const SelectModel = () => {
             margin="7px"
             fontSize="12px"
           >
-            <strong>Add</strong> a Tensor Node by &apos;Left Click&apos; +
-            &apos;Ctrl&apos;
+            <strong>Add</strong> a Tensor Node by &apos;Right Click&apos; on the
+            Canvas
           </Typography>
 
           <Typography
@@ -211,7 +211,7 @@ const SelectModel = () => {
             width: '270px',
             height: '48px',
             color: 'rgb(255,255,255)',
-            backgroundColor: 'rgb(60,50,70)',
+            backgroundColor: 'rgb(70,50,60)',
             borderRadius: '10px',
             fontSize: '15px',
             margin: '12px',

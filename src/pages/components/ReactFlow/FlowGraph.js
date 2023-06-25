@@ -1,14 +1,13 @@
 import React from 'react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { useCallback } from 'react';
 import ReactFlow, {
   addEdge,
   applyEdgeChanges,
   applyNodeChanges,
   Background,
-  // MiniMap,
+  BezierEdge,
 } from 'reactflow';
-// import { project } from 'react-flow-renderer';
 import 'reactflow/dist/style.css';
 
 import TensorNode from '../Tensors/TensorNode';
@@ -47,6 +46,15 @@ const rfStyle = {
 
 const nodeTypes = { TensorNode: TensorNode };
 
+const CustomEdge = (props) => {
+  const { animated } = props;
+
+  // Set the stroke color based on whether the edge is selected
+  const stroke = animated ? 'rgb(140,140,140)' : 'rgb(140,140,140)';
+
+  return <BezierEdge {...props} style={{ stroke, strokeWidth: 2 }} />;
+};
+
 export default function Flow() {
   const initialNodes = [];
   const initialEdges = [];
@@ -58,6 +66,18 @@ export default function Flow() {
   const dispatch = useDispatch();
   const setTensorNodes = (tensors) => {
     dispatch(computeGraphActions.setTensorNodes(tensors));
+  };
+  const setXVals = (xVals) => {
+    dispatch(computeGraphActions.setXVals(xVals));
+  };
+  const setPredVals = (predictions) => {
+    dispatch(computeGraphActions.setPredVals(predictions));
+  };
+  const setTrueVals = (trueVals) => {
+    dispatch(computeGraphActions.setTrueVals(trueVals));
+  };
+  const setAvgError = (avgError) => {
+    dispatch(computeGraphActions.setAvgError(avgError));
   };
 
   const [nodes, setNodes] = useState(initialNodes);
@@ -83,6 +103,10 @@ export default function Flow() {
         }
       });
     });
+    setXVals([]);
+    setPredVals([]);
+    setTrueVals([]);
+    setAvgError(2);
   }, [predefinedModel]);
 
   const onNodesChange = useCallback(
@@ -94,7 +118,16 @@ export default function Flow() {
     [setEdges]
   );
   const onConnect = useCallback(
-    (params) => setEdges((eds) => addEdge(params, eds)),
+    (params) => {
+      // Create a new edge object with the custom type
+      const newEdge = {
+        ...params,
+        type: 'custom',
+      };
+
+      // Add the new edge to the edges array
+      setEdges((eds) => addEdge(newEdge, eds));
+    },
     [setNodes]
   );
 
@@ -390,6 +423,7 @@ export default function Flow() {
             target: W_x_X.id,
             targetHandle: 'Right',
             id: 'reactflow__edge-1Source-0Single',
+            type: 'custom',
           });
           edgesAll.push({
             source: W.id,
@@ -397,6 +431,7 @@ export default function Flow() {
             target: W_x_X.id,
             targetHandle: 'Left',
             id: 'reactflow__edge-1Source-0Single',
+            type: 'custom',
           });
           edgesAll.push({
             source: b.id,
@@ -404,6 +439,7 @@ export default function Flow() {
             target: b_x_Ones.id,
             targetHandle: 'Left',
             id: 'reactflow__edge-1Source-0Single',
+            type: 'custom',
           });
           edgesAll.push({
             source: Ones.id,
@@ -411,6 +447,7 @@ export default function Flow() {
             target: b_x_Ones.id,
             targetHandle: 'Right',
             id: 'reactflow__edge-1Source-0Single',
+            type: 'custom',
           });
           edgesAll.push({
             source: W_x_X.id,
@@ -418,6 +455,7 @@ export default function Flow() {
             target: nodeNew.id,
             targetHandle: 'Left',
             id: 'reactflow__edge-1Source-0Single',
+            type: 'custom',
           });
           edgesAll.push({
             source: b_x_Ones.id,
@@ -425,6 +463,7 @@ export default function Flow() {
             target: nodeNew.id,
             targetHandle: 'Right',
             id: 'reactflow__edge-1Source-0Single',
+            type: 'custom',
           });
         }
 
@@ -465,6 +504,7 @@ export default function Flow() {
             target: nodeNew.id,
             targetHandle: 'Right',
             id: 'reactflow__edge-1Source-0Single',
+            type: 'custom',
           });
           edgesAll.push({
             source: W.id,
@@ -472,6 +512,7 @@ export default function Flow() {
             target: nodeNew.id,
             targetHandle: 'Left',
             id: 'reactflow__edge-1Source-0Single',
+            type: 'custom',
           });
         }
       }
@@ -635,9 +676,66 @@ export default function Flow() {
     },
     [nodes]
   );
+  const reactFlowWrapper = useRef(null);
+
+  useEffect(() => {
+    const handleContextMenu = (event) => {
+      event.preventDefault();
+      if (reactFlowWrapper.current) {
+        const boundingRect = reactFlowWrapper.current.getBoundingClientRect();
+        const x = event.clientX - boundingRect.left + window.scrollX;
+        const y = event.clientY - boundingRect.top + window.scrollY;
+        // Manually take into account any zooming or panning here
+        const position = { x, y };
+        let newMetaData = {
+          type: 'none',
+          initialization: 'zeros',
+          rows: 1,
+          cols: 1,
+          requiresGradient: true,
+          parents: [],
+          children: [],
+          isLast: false,
+          isTrue: false,
+          isInput: false,
+          isOutput: false,
+          metaDims: [1],
+          addBias: true, // only important for Dense layers
+        };
+        const newNode = {
+          id: heighestId.toString(),
+          modelId: -1,
+          modelParents: [],
+          modelChildren: [],
+          isRight: false,
+          type: 'TensorNode',
+          animated: true,
+          dragHandle: '.custom-drag-handle',
+          position,
+          data: newMetaData,
+        };
+        setHeighestId((heighestId) => heighestId + 1);
+        setNodes((nodes) => nodes.concat(newNode));
+      }
+    };
+    if (reactFlowWrapper.current) {
+      reactFlowWrapper.current.addEventListener(
+        'contextmenu',
+        handleContextMenu
+      );
+    }
+    return () => {
+      if (reactFlowWrapper.current) {
+        reactFlowWrapper.current.removeEventListener(
+          'contextmenu',
+          handleContextMenu
+        );
+      }
+    };
+  }, [heighestId]);
 
   return (
-    <div style={{ height: '100%', width: '100%' }}>
+    <div style={{ height: '100%', width: '100%' }} ref={reactFlowWrapper}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -652,13 +750,11 @@ export default function Flow() {
         nodeTypes={nodeTypes}
         fitView={true}
         style={rfStyle}
-        // onClick={handleCanvasClick}
         snapToGrid
         snapGrid={[40, 40]}
-        // attributionPosition="top-left"
+        edgeTypes={{ custom: CustomEdge }}
       >
         <Background color="rgba(200,200,200,0.45)" size="3" variant={variant} />
-        {/* <MiniMap /> */}
       </ReactFlow>
     </div>
   );

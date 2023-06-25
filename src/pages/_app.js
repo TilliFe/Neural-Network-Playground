@@ -78,6 +78,28 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
+const text = 'CoViz';
+const colors = [
+  { r: 255, g: 165, b: 0 }, // orange
+  { r: 255, g: 191, b: 64 },
+  { r: 255, g: 218, b: 128 },
+  { r: 255, g: 244, b: 191 },
+  { r: 173, g: 216, b: 230 }, // light blue
+];
+
+const characters = text.split('').map((char, i) => {
+  const color = colors[i];
+  const style = {
+    color: `rgb(${color.r}, ${color.g}, ${color.b})`,
+  };
+
+  return (
+    <span key={i} style={style}>
+      {char}
+    </span>
+  );
+});
+
 export default function PersistentDrawerLeft() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(true);
@@ -115,12 +137,11 @@ export default function PersistentDrawerLeft() {
                   component="div"
                   noWrap
                   sx={{
-                    color: 'rgb(230,230,230)',
                     width: '100%',
-                    fontSize: 30,
+                    fontSize: 32,
                   }}
                 >
-                  CoViz
+                  {characters}
                 </Typography>
               </Toolbar>
             </AppBar>
@@ -154,11 +175,9 @@ export default function PersistentDrawerLeft() {
                   )}
                 </IconButton>
               </DrawerHeader>
-              {/* <Divider style={{ bgcolor: 'red' }} /> */}
               <SelectModel />
             </Drawer>
             <Main open={open} style={{ height: '100vh' }}>
-              {/* <DrawerHeader /> */}
               <Flow />
               <SetUpData />
             </Main>
