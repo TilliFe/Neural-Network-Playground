@@ -14,6 +14,7 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import SetUpData from '../utils/backend/CPU/ModelSetup/setUpData';
 import Flow from './components/ReactFlow/FlowGraph';
 import SelectModel from './components/SelectionBar/usableModels';
+import WebGPUChecker from './components/Warnings/WebGPUChecker';
 
 import { Provider } from 'react-redux';
 import store from '../store/index';
@@ -116,6 +117,7 @@ export default function PersistentDrawerLeft() {
     <>
       <Provider store={store} class={styles} sx={{ fontSize: '10px' }}>
         <ThemeProvider theme={darkTheme}>
+          <WebGPUChecker />
           <Box sx={{ display: 'flex', bgcolor: 'rgb(40,40,40)' }}>
             <AppBar
               position="fixed"
