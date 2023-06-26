@@ -7,6 +7,7 @@ import ReactFlow, {
   applyNodeChanges,
   Background,
   BezierEdge,
+  Controls,
 } from 'reactflow';
 import 'reactflow/dist/style.css';
 
@@ -162,6 +163,7 @@ export default function Flow() {
   const lastTensorId = useSelector((state) => state.computeGraph.lastTensor);
   const edgesActive = useSelector((state) => state.computeGraph.edgesActive);
   const batchSize = useSelector((state) => state.computeGraph.batchSize);
+  // console.log(batchSize)
 
   useEffect(() => {
     setEdges((els) =>
@@ -737,6 +739,7 @@ export default function Flow() {
   return (
     <div style={{ height: '100%', width: '100%' }} ref={reactFlowWrapper}>
       <ReactFlow
+        minZoom={0.1}
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}
@@ -748,13 +751,14 @@ export default function Flow() {
         onEdgeDoubleClick={onEdgeDoubleClick}
         onPaneClick={onPaneClick}
         nodeTypes={nodeTypes}
-        fitView={true}
         style={rfStyle}
         snapToGrid
         snapGrid={[40, 40]}
         edgeTypes={{ custom: CustomEdge }}
+        fitView="true"
       >
-        <Background color="rgba(200,200,200,0.45)" size="3" variant={variant} />
+        <Controls />
+        <Background color="rgba(200,200,200,0.35)" size="4" variant={variant} />
       </ReactFlow>
     </div>
   );

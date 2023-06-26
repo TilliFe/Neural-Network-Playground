@@ -18,7 +18,7 @@ const buttonStyles = {
   marginLeft: '10px',
   marginRight: '10px',
   marginTop: '10px',
-  fontSize: '16px',
+  fontSize: '15px',
 
   '&:hover': {
     backgroundColor: 'rgb(130,130,130)',
@@ -78,7 +78,7 @@ const SelectModel = () => {
                   : buttonStyles.backgroundColor,
               border: 'solid 0px rgb(155,150,150)',
               height: '53px',
-              paddingLeft: '25px',
+              paddingLeft: '20px',
             }}
             startIcon={<AddIcon />}
           >
@@ -99,7 +99,7 @@ const SelectModel = () => {
             onClick={() => {
               handleClick(1);
               setPredefinedModel('Regression1');
-              setClicked(0);
+              // setClicked(0);
               setEdgesActive(false);
             }}
             sx={{
@@ -125,7 +125,9 @@ const SelectModel = () => {
             variant="contained"
             onClick={() => {
               handleClick(2);
-              setPredefinedModel('Classification1');
+              setPredefinedModel('Regression1raw');
+              // setClicked(0);
+              setEdgesActive(false);
             }}
             sx={{
               ...buttonStyles,
@@ -143,7 +145,57 @@ const SelectModel = () => {
                 paddingLeft: '3px',
               }}
             >
+              Regression Model 1 (raw)
+            </Box>
+          </Button>
+          <Button
+            variant="contained"
+            onClick={() => {
+              handleClick(3);
+              setPredefinedModel('Classification1');
+            }}
+            sx={{
+              ...buttonStyles,
+              backgroundColor:
+                clickedButton === 3
+                  ? 'rgb(110,110,110)'
+                  : buttonStyles.backgroundColor,
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'flex-start',
+                width: '100%',
+                paddingLeft: '3px',
+              }}
+            >
               Classification Model 1
+            </Box>
+          </Button>
+          <Button
+            variant="contained"
+            onClick={() => {
+              handleClick(4);
+              setPredefinedModel('Classification1raw');
+            }}
+            sx={{
+              ...buttonStyles,
+              backgroundColor:
+                clickedButton === 4
+                  ? 'rgb(110,110,110)'
+                  : buttonStyles.backgroundColor,
+            }}
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'flex-start',
+                width: '100%',
+                paddingLeft: '3px',
+              }}
+            >
+              Classification Model 1 (raw)
             </Box>
           </Button>
         </Stack>

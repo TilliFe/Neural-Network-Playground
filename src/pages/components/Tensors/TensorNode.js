@@ -40,7 +40,8 @@ function TensorNode({ data, isConnectable, id, modelId }) {
   const [type, setType] = useState(data.type);
   const [initialization, setInitialization] = useState(data.initialization);
   const [rows, setRows] = useState(data.rows);
-  const [cols] = useState(data.cols);
+  const [cols, setCols] = useState(data.cols);
+  // const [cols] = useState(data.cols);
   const [metaDims, setMetaDims] = useState(data.metaDims.join(','));
   const [requiresGradient, setRequiresGradient] = useState(
     data.requiresGradient
@@ -51,32 +52,36 @@ function TensorNode({ data, isConnectable, id, modelId }) {
   const [isOutput, setIsOutput] = useState(data.isOutput);
   const [addBias, setAddBias] = useState(data.addBias);
   const [dataSet, setDataSet] =
-    predefinedModel === 'Regression1'
+    predefinedModel === 'Regression1' || predefinedModel === 'Regression1raw'
       ? useState('medium_regr.')
-      : predefinedModel === 'Classification1'
+      : predefinedModel === 'Classification1' ||
+        predefinedModel === 'Classification1raw'
       ? useState('easy_class.')
       : useState('');
   const [iterations, setIterations] = useState(2000);
   const [learningRate, setLearningRate] =
-    predefinedModel === 'Regression1'
+    predefinedModel === 'Regression1' || predefinedModel === 'Regression1raw'
       ? useState(0.01)
-      : predefinedModel === 'Classification1'
+      : predefinedModel === 'Classification1' ||
+        predefinedModel === 'Classification1raw'
       ? useState(0.5)
       : useState(0.01);
   const [momentum, setMomentum] =
-    predefinedModel === 'Regression1'
+    predefinedModel === 'Regression1' || predefinedModel === 'Regression1raw'
       ? useState(0.96)
-      : predefinedModel === 'Classification1'
+      : predefinedModel === 'Classification1' ||
+        predefinedModel === 'Classification1raw'
       ? useState(0.9)
       : useState(0.9);
   const [batchSize, setBatchSize] =
-    predefinedModel === 'Regression1'
+    predefinedModel === 'Regression1' || predefinedModel === 'Regression1raw'
       ? useState(64)
-      : predefinedModel === 'Classification1'
+      : predefinedModel === 'Classification1' ||
+        predefinedModel === 'Classification1raw'
       ? useState(48)
       : useState(1);
   const [displayedDataType, setShowDisplayedDataType] =
-    predefinedModel === 'Regression1'
+    predefinedModel === 'Regression1' || predefinedModel === 'Regression1raw'
       ? useState('regr2D')
       : useState('classy2D');
   const [open, setOpen] = useState(false);
@@ -133,6 +138,16 @@ function TensorNode({ data, isConnectable, id, modelId }) {
     data.isLast = isLast;
     setTemp(temp + 1);
   }, [isLast]);
+
+  React.useEffect(() => {
+    if (type == 'MSE' || type == 'CE') {
+      data.isLast = true;
+      setTemp(temp + 1);
+    } else {
+      data.isLast = false;
+      setTemp(temp + 1);
+    }
+  }, [type]);
 
   React.useEffect(() => {
     data.isTrue = isTrue;
@@ -328,7 +343,7 @@ function TensorNode({ data, isConnectable, id, modelId }) {
         : type == 'isTrue'
         ? '237px'
         : type == 'add' || type == 'mult'
-        ? '186px'
+        ? '208px'
         : '330px', // if none
     width: '250px',
     border: '2px solid rgb(160,160,160)',
@@ -462,7 +477,11 @@ function TensorNode({ data, isConnectable, id, modelId }) {
 
         {type != 'CE' && type != 'MSE' ? (
           <div>
-            {type == 'none' || type == 'input' || type == 'isTrue' ? (
+            {type == 'none' ||
+            type == 'input' ||
+            type == 'isTrue' ||
+            type == 'mult' ||
+            type == 'add' ? (
               <>
                 <FormControl sx={{ ...textBoxStyle, height: 'auto' }}>
                   <Grid
@@ -471,7 +490,7 @@ function TensorNode({ data, isConnectable, id, modelId }) {
                     justifyContent="center"
                     alignItems="center"
                   >
-                    {type == 'none' ? (
+                    {type == 'none' || type == 'mult' || type == 'add' ? (
                       <Grid item xs={5}>
                         <Typography variant="subtitle1">Rows/Cols</Typography>
                       </Grid>
@@ -480,7 +499,7 @@ function TensorNode({ data, isConnectable, id, modelId }) {
                         <Typography variant="subtitle1">SampleSize</Typography>
                       </Grid>
                     )}
-                    {type == 'none' ? (
+                    {type == 'none' || type == 'mult' || type == 'add' ? (
                       <>
                         <Grid item xs={3.5}>
                           <TextField
@@ -748,7 +767,7 @@ function TensorNode({ data, isConnectable, id, modelId }) {
                       margin: 7,
                     }}
                   />
-                  <span style={{ fontSize: '10px' }}>Prediction</span>
+                  <span style={{ fontSize: '10px' }}>True Values</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
                   <div
@@ -759,7 +778,7 @@ function TensorNode({ data, isConnectable, id, modelId }) {
                       margin: 7,
                     }}
                   />
-                  <span style={{ fontSize: '10px' }}>True Values</span>
+                  <span style={{ fontSize: '10px' }}>Prediction</span>
                 </div>
               </div>
             ) : displayedDataType == 'classy2D' ? (
@@ -798,7 +817,7 @@ function TensorNode({ data, isConnectable, id, modelId }) {
                 </div>
                 <div style={{ alignItems: 'center', marginLeft: 25 }}>
                   <span style={{ fontSize: '11px' }}>
-                    Dots: Precictions, Voronoi: True Values
+                    Dots: Predictions, Voronoi: True Values
                   </span>
                 </div>
               </>

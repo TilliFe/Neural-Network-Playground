@@ -43,7 +43,7 @@ function setUpModel(
     } else if (initialization == 'ones' && type == 'none') {
       tensor.setAllOnes();
     }
-    if (tensors[i].isLast) {
+    if (tensors[i].isLast || type == 'MSE' || type == 'CE') {
       model.lastTensor = tensorId;
     }
     if (tensors[i].isInput) {
@@ -168,6 +168,8 @@ function setUpModel(
       ); // derivate will be rotate180(kernel)
     }
   }
+
+  console.log(model);
 
   let flatData = [];
   const offsets = []; // where does each tensor start in the flattened array

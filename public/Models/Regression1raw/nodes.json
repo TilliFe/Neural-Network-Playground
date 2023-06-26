@@ -1,0 +1,458 @@
+[
+  {
+    "id": "0",
+    "modelId": 3,
+    "modelParents": [],
+    "modelChildren": [5],
+    "isRight": false,
+    "type": "TensorNode",
+    "animated": true,
+    "dragHandle": ".custom-drag-handle",
+    "position": {
+      "x": 120,
+      "y": 560
+    },
+    "data": {
+      "type": "none",
+      "initialization": "random",
+      "rows": 128,
+      "cols": 1,
+      "requiresGradient": true,
+      "parents": [],
+      "children": [],
+      "isLast": false,
+      "isTrue": false,
+      "isInput": false,
+      "isOutput": false,
+      "metaDims": [128],
+      "addBias": true
+    },
+    "width": 274,
+    "height": 354,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 120,
+      "y": 560
+    },
+    "dragging": false,
+    "queueCount": 0
+  },
+  {
+    "id": "1",
+    "modelId": 1,
+    "modelParents": [],
+    "modelChildren": [4],
+    "isRight": false,
+    "type": "TensorNode",
+    "animated": true,
+    "dragHandle": ".custom-drag-handle",
+    "position": {
+      "x": 120,
+      "y": -160
+    },
+    "data": {
+      "type": "none",
+      "initialization": "random",
+      "rows": 128,
+      "cols": 1,
+      "requiresGradient": true,
+      "parents": [],
+      "children": [],
+      "isLast": false,
+      "isTrue": false,
+      "isInput": false,
+      "isOutput": false,
+      "metaDims": [128],
+      "addBias": true
+    },
+    "width": 274,
+    "height": 354,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 120,
+      "y": -160
+    },
+    "dragging": false,
+    "queueCount": 0
+  },
+  {
+    "id": "2",
+    "modelId": 2,
+    "modelParents": [],
+    "modelChildren": [5],
+    "isRight": true,
+    "type": "TensorNode",
+    "animated": true,
+    "dragHandle": ".custom-drag-handle",
+    "position": {
+      "x": 120,
+      "y": 920
+    },
+    "data": {
+      "type": "none",
+      "initialization": "ones",
+      "rows": 1,
+      "cols": 64,
+      "requiresGradient": false,
+      "parents": [],
+      "children": [],
+      "isLast": false,
+      "isTrue": false,
+      "isInput": false,
+      "isOutput": false,
+      "metaDims": [1],
+      "addBias": true
+    },
+    "width": 274,
+    "height": 354,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 120,
+      "y": 920
+    },
+    "dragging": false,
+    "queueCount": 0
+  },
+  {
+    "id": "3",
+    "modelId": 0,
+    "modelParents": [],
+    "modelChildren": [4],
+    "isRight": true,
+    "type": "TensorNode",
+    "animated": true,
+    "dragHandle": ".custom-drag-handle",
+    "position": {
+      "x": 120,
+      "y": 200
+    },
+    "data": {
+      "type": "input",
+      "initialization": "zeros",
+      "rows": 1,
+      "cols": 1,
+      "requiresGradient": false,
+      "parents": [],
+      "children": [],
+      "isLast": false,
+      "isTrue": false,
+      "isInput": true,
+      "isOutput": false,
+      "metaDims": [1],
+      "addBias": true
+    },
+    "width": 274,
+    "height": 354,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 120,
+      "y": 200
+    },
+    "dragging": false,
+    "queueCount": 0
+  },
+  {
+    "id": "4",
+    "modelId": 8,
+    "modelParents": [6],
+    "modelChildren": [9],
+    "isRight": true,
+    "type": "TensorNode",
+    "animated": true,
+    "dragHandle": ".custom-drag-handle",
+    "position": {
+      "x": 1080,
+      "y": -160
+    },
+    "data": {
+      "type": "ReLU",
+      "initialization": "zeros",
+      "rows": 128,
+      "cols": 1,
+      "requiresGradient": true,
+      "parents": [],
+      "children": [],
+      "isLast": false,
+      "isTrue": false,
+      "isInput": false,
+      "isOutput": false,
+      "metaDims": [128],
+      "addBias": true
+    },
+    "width": 274,
+    "height": 210,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 1080,
+      "y": -160
+    },
+    "dragging": false,
+    "queueCount": 0
+  },
+  {
+    "id": "5",
+    "modelId": 7,
+    "modelParents": [],
+    "modelChildren": [9],
+    "isRight": false,
+    "type": "TensorNode",
+    "animated": true,
+    "dragHandle": ".custom-drag-handle",
+    "position": {
+      "x": 1080,
+      "y": -560
+    },
+    "data": {
+      "type": "none",
+      "initialization": "random",
+      "rows": 1,
+      "cols": 128,
+      "requiresGradient": true,
+      "parents": [],
+      "children": [],
+      "isLast": false,
+      "isTrue": false,
+      "isInput": false,
+      "isOutput": false,
+      "metaDims": [1],
+      "addBias": true
+    },
+    "width": 274,
+    "height": 354,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 1080,
+      "y": -560
+    },
+    "dragging": false,
+    "queueCount": 0
+  },
+  {
+    "id": "6",
+    "modelId": 9,
+    "modelParents": [7, 8],
+    "modelChildren": [11],
+    "isRight": true,
+    "type": "TensorNode",
+    "animated": true,
+    "dragHandle": ".custom-drag-handle",
+    "position": {
+      "x": 1400,
+      "y": -160
+    },
+    "data": {
+      "type": "mult",
+      "initialization": "zeros",
+      "rows": 1,
+      "cols": 64,
+      "requiresGradient": true,
+      "parents": [],
+      "children": [],
+      "isLast": false,
+      "isTrue": false,
+      "isInput": false,
+      "isOutput": true,
+      "metaDims": [1],
+      "addBias": true
+    },
+    "width": 274,
+    "height": 598,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 1400,
+      "y": -160
+    },
+    "dragging": false,
+    "queueCount": 0
+  },
+  {
+    "id": "7",
+    "modelId": 10,
+    "modelParents": [],
+    "modelChildren": [11],
+    "isRight": false,
+    "type": "TensorNode",
+    "animated": true,
+    "dragHandle": ".custom-drag-handle",
+    "position": {
+      "x": 1400,
+      "y": -560
+    },
+    "data": {
+      "type": "isTrue",
+      "initialization": "zeros",
+      "rows": 1,
+      "cols": 1,
+      "requiresGradient": false,
+      "parents": [],
+      "children": [],
+      "isLast": false,
+      "isTrue": true,
+      "isInput": false,
+      "isOutput": false,
+      "metaDims": [1],
+      "addBias": true
+    },
+    "width": 274,
+    "height": 261,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 1400,
+      "y": -560
+    },
+    "dragging": false,
+    "queueCount": 0
+  },
+  {
+    "id": "8",
+    "modelId": 11,
+    "modelParents": [10, 9],
+    "modelChildren": [],
+    "isRight": false,
+    "type": "TensorNode",
+    "animated": true,
+    "dragHandle": ".custom-drag-handle",
+    "position": {
+      "x": 1720,
+      "y": -160
+    },
+    "data": {
+      "type": "MSE",
+      "initialization": "zeros",
+      "rows": 1,
+      "cols": 1,
+      "requiresGradient": true,
+      "parents": [],
+      "children": [],
+      "isLast": true,
+      "isTrue": false,
+      "isInput": false,
+      "isOutput": false,
+      "metaDims": [1],
+      "addBias": true
+    },
+    "width": 274,
+    "height": 646,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 1720,
+      "y": -160
+    },
+    "dragging": false,
+    "queueCount": 0
+  },
+  {
+    "id": "10",
+    "modelId": 4,
+    "modelParents": [1, 0],
+    "modelChildren": [6],
+    "isRight": false,
+    "type": "TensorNode",
+    "animated": true,
+    "dragHandle": ".custom-drag-handle",
+    "position": {
+      "x": 440,
+      "y": -160
+    },
+    "data": {
+      "type": "mult",
+      "initialization": "zeros",
+      "rows": 128,
+      "cols": 64,
+      "requiresGradient": true,
+      "parents": [],
+      "children": [],
+      "isLast": false,
+      "isTrue": false,
+      "isInput": false,
+      "isOutput": false,
+      "metaDims": [128],
+      "addBias": true
+    },
+    "width": 274,
+    "height": 232,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 440,
+      "y": -160
+    },
+    "dragging": false,
+    "queueCount": 0
+  },
+  {
+    "id": "11",
+    "modelId": 5,
+    "modelParents": [3, 2],
+    "modelChildren": [6],
+    "isRight": true,
+    "type": "TensorNode",
+    "animated": true,
+    "dragHandle": ".custom-drag-handle",
+    "position": {
+      "x": 440,
+      "y": 560
+    },
+    "data": {
+      "type": "mult",
+      "initialization": "zeros",
+      "rows": 128,
+      "cols": 64,
+      "requiresGradient": true,
+      "parents": [],
+      "children": [],
+      "isLast": false,
+      "isTrue": false,
+      "isInput": false,
+      "isOutput": false,
+      "metaDims": [128],
+      "addBias": true
+    },
+    "width": 274,
+    "height": 232,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 440,
+      "y": 560
+    },
+    "dragging": false,
+    "queueCount": 0
+  },
+  {
+    "id": "12",
+    "modelId": 6,
+    "modelParents": [4, 5],
+    "modelChildren": [8],
+    "isRight": false,
+    "type": "TensorNode",
+    "animated": true,
+    "dragHandle": ".custom-drag-handle",
+    "position": {
+      "x": 760,
+      "y": -160
+    },
+    "data": {
+      "type": "add",
+      "initialization": "zeros",
+      "rows": 128,
+      "cols": 64,
+      "requiresGradient": true,
+      "parents": [],
+      "children": [],
+      "isLast": false,
+      "isTrue": false,
+      "isInput": false,
+      "isOutput": false,
+      "metaDims": [128],
+      "addBias": true
+    },
+    "width": 274,
+    "height": 232,
+    "selected": false,
+    "positionAbsolute": {
+      "x": 760,
+      "y": -160
+    },
+    "dragging": false,
+    "queueCount": 0
+  }
+]

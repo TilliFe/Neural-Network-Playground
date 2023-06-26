@@ -1,0 +1,74 @@
+[
+  {
+    "source": "4",
+    "sourceHandle": "Source",
+    "target": "6",
+    "targetHandle": "Right",
+    "id": "reactflow__edge-4Source-6Right",
+    "type": "custom",
+    "animated": false
+  },
+  {
+    "source": "5",
+    "sourceHandle": "Source",
+    "target": "6",
+    "targetHandle": "Left",
+    "id": "reactflow__edge-5Source-6Left",
+    "type": "custom",
+    "animated": false
+  },
+  {
+    "source": "9",
+    "sourceHandle": "Source",
+    "target": "8",
+    "targetHandle": "Left",
+    "type": "custom",
+    "id": "reactflow__edge-9Source-8Left",
+    "animated": false
+  },
+  {
+    "source": "0",
+    "sourceHandle": "Source",
+    "target": "8",
+    "targetHandle": "Right",
+    "type": "custom",
+    "id": "reactflow__edge-0Source-8Right",
+    "animated": false
+  },
+  {
+    "source": "8",
+    "sourceHandle": "Source",
+    "target": "2",
+    "targetHandle": "Single",
+    "type": "custom",
+    "id": "reactflow__edge-8Source-2Single",
+    "animated": false
+  },
+  {
+    "source": "2",
+    "sourceHandle": "Source",
+    "target": "7",
+    "targetHandle": "Right",
+    "type": "custom",
+    "id": "reactflow__edge-2Source-7Right",
+    "animated": false
+  },
+  {
+    "source": "10",
+    "sourceHandle": "Source",
+    "target": "7",
+    "targetHandle": "Left",
+    "type": "custom",
+    "id": "reactflow__edge-10Source-7Left",
+    "animated": false
+  },
+  {
+    "source": "7",
+    "sourceHandle": "Source",
+    "target": "4",
+    "targetHandle": "Single",
+    "type": "custom",
+    "id": "reactflow__edge-7Source-4Single",
+    "animated": false
+  }
+]

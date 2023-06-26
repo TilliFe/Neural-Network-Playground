@@ -1,0 +1,101 @@
+[
+  {
+    "source": "1",
+    "sourceHandle": "Source",
+    "target": "10",
+    "targetHandle": "Left",
+    "type": "custom",
+    "id": "reactflow__edge-1Source-10Left",
+    "animated": false
+  },
+  {
+    "source": "3",
+    "sourceHandle": "Source",
+    "target": "10",
+    "targetHandle": "Right",
+    "type": "custom",
+    "id": "reactflow__edge-3Source-10Right",
+    "animated": false
+  },
+  {
+    "source": "0",
+    "sourceHandle": "Source",
+    "target": "11",
+    "targetHandle": "Left",
+    "type": "custom",
+    "id": "reactflow__edge-0Source-11Left",
+    "animated": false
+  },
+  {
+    "source": "2",
+    "sourceHandle": "Source",
+    "target": "11",
+    "targetHandle": "Right",
+    "type": "custom",
+    "id": "reactflow__edge-2Source-11Right",
+    "animated": false
+  },
+  {
+    "source": "11",
+    "sourceHandle": "Source",
+    "target": "12",
+    "targetHandle": "Right",
+    "type": "custom",
+    "id": "reactflow__edge-11Source-12Right",
+    "animated": false
+  },
+  {
+    "source": "10",
+    "sourceHandle": "Source",
+    "target": "12",
+    "targetHandle": "Left",
+    "type": "custom",
+    "id": "reactflow__edge-10Source-12Left",
+    "animated": false
+  },
+  {
+    "source": "12",
+    "sourceHandle": "Source",
+    "target": "4",
+    "targetHandle": "Single",
+    "type": "custom",
+    "id": "reactflow__edge-12Source-4Single",
+    "animated": false
+  },
+  {
+    "source": "4",
+    "sourceHandle": "Source",
+    "target": "6",
+    "targetHandle": "Right",
+    "type": "custom",
+    "id": "reactflow__edge-4Source-6Right",
+    "animated": false
+  },
+  {
+    "source": "5",
+    "sourceHandle": "Source",
+    "target": "6",
+    "targetHandle": "Left",
+    "type": "custom",
+    "id": "reactflow__edge-5Source-6Left",
+    "animated": false
+  },
+  {
+    "source": "7",
+    "sourceHandle": "Source",
+    "target": "8",
+    "targetHandle": "Left",
+    "type": "custom",
+    "id": "reactflow__edge-7Source-8Left",
+    "animated": false
+  },
+  {
+    "source": "6",
+    "sourceHandle": "Source",
+    "target": "8",
+    "targetHandle": "Right",
+    "type": "custom",
+    "id": "reactflow__edge-6Source-8Right",
+    "animated": false
+  }
+]
