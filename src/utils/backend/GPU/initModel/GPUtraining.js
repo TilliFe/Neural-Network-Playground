@@ -519,6 +519,7 @@ export async function MatMul(
       predValues_all = [];
       trueValues_all = [];
       xValues_all = [];
+      errorsArray = [];
     }
 
     // compute type 2 - compute partial derivatives

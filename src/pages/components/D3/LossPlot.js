@@ -25,7 +25,7 @@ export default function LossPLot() {
   }, [edgesActive]);
 
   useEffect(() => {
-    const newError = { x: data.length, y: Math.min(avgError, 2.0) };
+    const newError = { x: data.length, y: Math.min(avgError, 1.0) };
     setData((data) => [...data, newError]); // spread the old array and add the new object
   }, [avgError]);
 

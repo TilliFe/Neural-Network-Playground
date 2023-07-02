@@ -24,7 +24,8 @@
     "targetHandle": "Left",
     "type": "custom",
     "id": "reactflow__edge-9Source-8Left",
-    "animated": false
+    "animated": false,
+    "selected": false
   },
   {
     "source": "0",
@@ -33,16 +34,8 @@
     "targetHandle": "Right",
     "type": "custom",
     "id": "reactflow__edge-0Source-8Right",
-    "animated": false
-  },
-  {
-    "source": "8",
-    "sourceHandle": "Source",
-    "target": "2",
-    "targetHandle": "Single",
-    "type": "custom",
-    "id": "reactflow__edge-8Source-2Single",
-    "animated": false
+    "animated": false,
+    "selected": false
   },
   {
     "source": "2",
@@ -69,6 +62,53 @@
     "targetHandle": "Single",
     "type": "custom",
     "id": "reactflow__edge-7Source-4Single",
+    "animated": false
+  },
+  {
+    "source": "12",
+    "sourceHandle": "Source",
+    "target": "13",
+    "targetHandle": "Left",
+    "type": "custom",
+    "id": "reactflow__edge-12Source-13Left",
+    "selected": false,
+    "animated": false
+  },
+  {
+    "source": "11",
+    "sourceHandle": "Source",
+    "target": "13",
+    "targetHandle": "Right",
+    "type": "custom",
+    "id": "reactflow__edge-11Source-13Right",
+    "selected": false,
+    "animated": false
+  },
+  {
+    "source": "8",
+    "sourceHandle": "Source",
+    "target": "14",
+    "targetHandle": "Left",
+    "type": "custom",
+    "id": "reactflow__edge-8Source-14Left",
+    "animated": false
+  },
+  {
+    "source": "13",
+    "sourceHandle": "Source",
+    "target": "14",
+    "targetHandle": "Right",
+    "type": "custom",
+    "id": "reactflow__edge-13Source-14Right",
+    "animated": false
+  },
+  {
+    "source": "14",
+    "sourceHandle": "Source",
+    "target": "2",
+    "targetHandle": "Single",
+    "type": "custom",
+    "id": "reactflow__edge-14Source-2Single",
     "animated": false
   }
 ]

@@ -62,7 +62,7 @@
       "isInput": false,
       "isOutput": false,
       "metaDims": [64],
-      "addBias": false
+      "addBias": true
     },
     "width": 275,
     "height": 299,

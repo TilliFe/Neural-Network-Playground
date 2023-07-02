@@ -180,9 +180,9 @@ function setUpModel(
   tensorOffsets.push(0); // set to total number of floats after completely filled
   tensorOffsets.push(maxBlockSize);
 
+
   for (let i = 0; i < model.numTensors + 1; i++) {
     offsets.push(offset); // tensor i starts at index offset in flatData
-
     flatData.push(model.tensors[i].type);
     flatData.push(model.tensors[i].isRightMultiplicator);
     flatData.push(model.tensors[i].requiresGradient);
@@ -209,7 +209,8 @@ function setUpModel(
     if (i == data.tensorTrueId) {
       data.trueOffset = offset + 6;
     }
-
+    
+    
     tensorOffsets = tensorOffsets.concat([
       offset,
       ++offset,

@@ -267,7 +267,7 @@ export default function Flow() {
         };
         nodesAll.push(W);
 
-        if (parentNode.data.addBias) {
+        if (node.data.addBias) {
           id = heighestNodeId++;
           const W_x_X = {
             id: id.toString(),

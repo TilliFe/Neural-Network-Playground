@@ -678,7 +678,7 @@ function TensorNode({ data, isConnectable, id, modelId }) {
                     }}
                     id="isOutput"
                     label={'isOutput'}
-                    value={isOutput}
+                    checked={isOutput}
                     onChange={(event) => setIsOutput(event.target.checked)}
                   />
                 }
