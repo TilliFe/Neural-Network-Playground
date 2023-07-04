@@ -25,7 +25,7 @@ import DialogActions from '@mui/material/DialogActions';
 import PlotSVG from '../D3/PlotSVG';
 import LossPlot from '../D3/LossPlot';
 import ClassifyPlot from '../D3/classificationPlot';
-import InfoComponent from './InfoComponent';
+import InfoComponent from '../SelectionBar/InfoComponent';
 
 function TensorNode({ data, isConnectable, id, modelId }) {
   // =========  states =====================================================

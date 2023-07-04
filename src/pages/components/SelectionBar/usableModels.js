@@ -61,7 +61,7 @@ const SelectModel = () => {
     >
       <Grid
         item
-        sx={{ height: { xs: '50%', sm: '60%', md: '65%' }, overflow: 'auto' }}
+        sx={{ height: { xs: '50%', sm: '60%', md: '60%' }, overflow: 'auto' }}
       >
         <Stack style={{}} direction="column">
           <Button
@@ -204,7 +204,7 @@ const SelectModel = () => {
       </Grid>
       <Grid
         item
-        sx={{ height: { xs: '35%', sm: '30%', md: '25%' }, overflow: 'auto' }}
+        sx={{ height: { xs: '35%', sm: '33%', md: '32%' }, overflow: 'auto' }}
       >
         <Stack style={{}} direction="column">
           <Typography
@@ -250,7 +250,7 @@ const SelectModel = () => {
           <Docs />
         </Stack>
       </Grid>
-      <Grid item sx={{ height: { xs: '8%', sm: '5%', md: '3%' } }}>
+      <Grid item sx={{ height: { xs: '1%', sm: '1%', md: '1%' } }}>
         <Button
           onClick={() =>
             window.open(
@@ -267,6 +267,9 @@ const SelectModel = () => {
             borderRadius: '10px',
             fontSize: '15px',
             margin: '12px',
+            '&:hover': {
+              backgroundColor: 'rgb(80,55,65)',
+            },
           }}
           startIcon={<GitHubIcon />}
         >
