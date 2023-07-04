@@ -3,7 +3,14 @@ import React from 'react';
 
 const InfoReLU = () => {
   return (
-    <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
+    <div
+      style={{
+        fontFamily: 'Roboto',
+        fontSize: '16px',
+        lineHeight: '1.5',
+        marginRight: '7px',
+      }}
+    >
       <strong>ReLU (Rectified Linear Unit)</strong> is an activation function
       commonly used in neural networks. It is defined as:
       <MathJax>{'$$ f(x) = max(0,x) $$'}</MathJax>
@@ -15,7 +22,14 @@ const InfoReLU = () => {
 
 const InfoCE = () => {
   return (
-    <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
+    <div
+      style={{
+        fontFamily: 'Roboto',
+        fontSize: '16px',
+        lineHeight: '1.5',
+        marginRight: '7px',
+      }}
+    >
       <strong>Cross-Entropy</strong> loss for binary classification is defined
       as:
       <MathJax>
@@ -32,7 +46,14 @@ const InfoCE = () => {
 
 const InfoMSE = () => {
   return (
-    <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
+    <div
+      style={{
+        fontFamily: 'Roboto',
+        fontSize: '16px',
+        lineHeight: '1.5',
+        marginRight: '7px',
+      }}
+    >
       <strong>MSE (Mean Squared Error)</strong> loss is defined as:
       <MathJax>
         {'$$ L = \\frac{1}{N}\\sum_{i=1}^{N}(y_i - \\hat{y}_i)^2 $$'}
@@ -45,7 +66,14 @@ const InfoMSE = () => {
 
 const InfoSoftmax = () => {
   return (
-    <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
+    <div
+      style={{
+        fontFamily: 'Roboto',
+        fontSize: '16px',
+        lineHeight: '1.5',
+        marginRight: '7px',
+      }}
+    >
       In a neural network, the <strong>Softmax</strong> function is used to
       normalize the output of a network to a probability distribution over
       predicted output classes. It is defined as:
@@ -60,26 +88,74 @@ const InfoSoftmax = () => {
 const InfoDense = () => {
   return (
     <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
-      A <strong>Dense layer</strong> is a layer of neurons where each neuron is
-      connected to all neurons in the previous layer. It is also known as a
-      fully connected layer. Dense layers are used to learn complex
-      relationships between the input and output data.
+      A <strong>Dense layer</strong>, also known as a fully connected layer, is
+      a layer of neurons where each neuron is connected to all neurons in the
+      previous layer. It is used to learn complex relationships between the
+      input and output data.
       <div>
-        You can change the number of <strong>Neurons</strong>. Usually a higher
-        number of neurons leads to a more accurate model, but also increases the
-        training time and too many neurons can lead to overfitting. On the other
-        hand, too few neurons can lead to underfitting.
+        The number of <strong>Neurons</strong> can be adjusted to balance model
+        accuracy, training time, and overfitting/underfitting.
       </div>
-      A <strong>Bias</strong> is a value that is added to the weighted sum of
-      the inputs to a neuron. It allows the model to fit the data better by
-      shifting the activation function to the left or right.
+      A <strong>Bias</strong> is a value added to the weighted sum of the inputs
+      to a neuron, allowing the model to fit the data better by shifting the
+      activation function.
+      <div>
+        Mathematically, a Dense layer can be represented as:
+        <MathJax>{'$$ Dense(X) = W*X + b*1 $$'}</MathJax>
+        where <MathJax inline>{'W'}</MathJax> represents the weights,{' '}
+        <MathJax inline>{'X'}</MathJax> represents the input data,{' '}
+        <MathJax inline>{'b'}</MathJax> represents the bias, and{' '}
+        <MathJax inline>{'1'}</MathJax> is a vector of ones. The weights and
+        biases are parameters of the network that are adapted during training to
+        minimize the loss of the network.
+      </div>
+    </div>
+  );
+};
+
+const InfoAdd = () => {
+  return (
+    <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
+      The <strong>Add</strong> operation performs element-wise addition of its
+      parent nodes&apos; data. For a successful matrix addition, the shapes of
+      the parent nodes must be the same.
+      <div>
+        Mathematically, this can be represented as:
+        <MathJax>{'$$ Add(A,B) = A + B $$'}</MathJax>
+        where <MathJax inline>{'A'}</MathJax> represents the upper (left) parent
+        and <MathJax inline>{'B'}</MathJax> represents the lower (right) parent.
+      </div>
+    </div>
+  );
+};
+
+const InfoMult = () => {
+  return (
+    <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
+      The <strong>Mult</strong> operation performs element-wise multiplication
+      of its parent nodes&apos; data. For a successful matrix multiplication,
+      the number of columns in the upper (left) parent must match the number of
+      rows in the lower (right) parent.
+      <div>
+        Mathematically, this can be represented as:
+        <MathJax>{'$$ Mult(A,B) = A * B $$'}</MathJax>
+        where <MathJax inline>{'A'}</MathJax> represents the upper (left) parent
+        and <MathJax inline>{'B'}</MathJax> represents the lower (right) parent.
+      </div>
     </div>
   );
 };
 
 const InfoInput = () => {
   return (
-    <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
+    <div
+      style={{
+        fontFamily: 'Roboto',
+        fontSize: '16px',
+        lineHeight: '1.5',
+        marginRight: '7px',
+      }}
+    >
       The <strong>Input</strong> to a neural network consists of a dataset of
       samples. Each sample is a vector of a fixed size, called the{' '}
       <strong>sampleSize</strong>. The input to the network is processed in
@@ -93,9 +169,36 @@ const InfoInput = () => {
   );
 };
 
-const InfoTrueValues = () => {
+const InfoNone = () => {
   return (
     <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
+      A node with type <strong>None</strong> holds a matrix of size rows x cols
+      and serves as input to later nodes. The user can set the initialization to
+      `allZeros`, `allOnes`, or `random`.
+      <div>
+        It is important to keep in mind the dimensions set here, as later
+        nodes&apos; dimensions depend on these values.
+      </div>
+      <div>
+        If `requiresGradient` is set to false, the node will not participate in
+        the backpropagation algorithm and its values will remain static. If
+        `requiresGradient` is set to true, the entries of the matrix will be
+        updated during training.
+      </div>
+    </div>
+  );
+};
+
+const InfoTrueValues = () => {
+  return (
+    <div
+      style={{
+        fontFamily: 'Roboto',
+        fontSize: '16px',
+        lineHeight: '1.5',
+        marginRight: '7px',
+      }}
+    >
       The <strong>True values</strong> are the ground truth labels or values
       associated with each input sample. The size of one true value, called the{' '}
       <strong>sampleSize</strong>, should be the same dimension as the predicted
@@ -107,22 +210,54 @@ const InfoTrueValues = () => {
 
 export default function InfoComponent(props) {
   return (
-    <MathJaxContext>
-      {props.type === 'ReLU' ? (
-        <InfoReLU />
-      ) : props.type === 'softmax' ? (
-        <InfoSoftmax />
-      ) : props.type === 'CE' ? (
-        <InfoCE />
-      ) : props.type === 'MSE' ? (
-        <InfoMSE />
-      ) : props.type === 'Dense' ? (
-        <InfoDense />
-      ) : props.type === 'input' ? (
-        <InfoInput />
-      ) : props.type === 'isTrue' ? (
-        <InfoTrueValues />
-      ) : null}
-    </MathJaxContext>
+    <>
+      <style>
+        {`
+          /* For WebKit (Safari, Chrome, etc.) */
+          ::-webkit-scrollbar {
+            width: 4px;
+          }
+
+          ::-webkit-scrollbar-track {
+            background: transparent;
+          }
+
+          ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            border: 4px solid transparent;
+          }
+
+          /* For Firefox */
+          * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+          }
+        `}
+      </style>
+      <MathJaxContext>
+        {props.type === 'ReLU' ? (
+          <InfoReLU />
+        ) : props.type === 'softmax' ? (
+          <InfoSoftmax />
+        ) : props.type === 'mult' ? (
+          <InfoMult />
+        ) : props.type === 'add' ? (
+          <InfoAdd />
+        ) : props.type === 'none' ? (
+          <InfoNone />
+        ) : props.type === 'CE' ? (
+          <InfoCE />
+        ) : props.type === 'MSE' ? (
+          <InfoMSE />
+        ) : props.type === 'Dense' ? (
+          <InfoDense />
+        ) : props.type === 'input' ? (
+          <InfoInput />
+        ) : props.type === 'isTrue' ? (
+          <InfoTrueValues />
+        ) : null}
+      </MathJaxContext>
+    </>
   );
 }

@@ -35,13 +35,11 @@ function TensorNode({ data, isConnectable, id, modelId }) {
     // this is the model name
     (state) => state.computeGraph.predefinedModel
   );
-  // console.log(predefinedModel)
 
   const [type, setType] = useState(data.type);
   const [initialization, setInitialization] = useState(data.initialization);
   const [rows, setRows] = useState(data.rows);
   const [cols, setCols] = useState(data.cols);
-  // const [cols] = useState(data.cols);
   const [metaDims, setMetaDims] = useState(data.metaDims.join(','));
   const [requiresGradient, setRequiresGradient] = useState(
     data.requiresGradient
