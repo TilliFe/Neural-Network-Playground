@@ -132,15 +132,26 @@ const InfoAdd = () => {
 const InfoMult = () => {
   return (
     <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
-      The <strong>Mult</strong> operation performs element-wise multiplication
-      of its parent nodes&apos; data. For a successful matrix multiplication,
-      the number of columns in the upper (left) parent must match the number of
-      rows in the lower (right) parent.
+      The <strong>Mult</strong> operation performs matrix multiplication of its
+      parent nodes' data. For a successful matrix multiplication, the number of
+      columns in the upper (left) parent must match the number of rows in the
+      lower (right) parent.
       <div>
         Mathematically, this can be represented as:
-        <MathJax>{'$$ Mult(A,B) = A * B $$'}</MathJax>
-        where <MathJax inline>{'A'}</MathJax> represents the upper (left) parent
-        and <MathJax inline>{'B'}</MathJax> represents the lower (right) parent.
+        <MathJax>{'$$ Mult(A,B) = A * B $$'}</MathJax> where{' '}
+        <MathJax inline>{'A'}</MathJax> represents the upper (left) parent and{' '}
+        <MathJax inline>{'B'}</MathJax> represents the lower (right) parent.
+      </div>
+      <div>
+        The resulting matrix <MathJax inline>{'C = A * B'}</MathJax> has
+        dimensions equal to the number of rows in matrix{' '}
+        <MathJax inline>{'A'}</MathJax> by the number of columns in matrix{' '}
+        <MathJax inline>{'B'}</MathJax>. Each element in matrix{' '}
+        <MathJax inline>{'C'}</MathJax> is calculated as:
+        <MathJax>{`$$ c_{i,j} = \\sum_{k=1}^{n} a_{i,k} b_{k,j} $$`}</MathJax>
+        where <MathJax inline>{'n'}</MathJax> is the number of columns in matrix{' '}
+        <MathJax inline>{'A'}</MathJax> (or equivalently, the number of rows in
+        matrix <MathJax inline>{'B'}</MathJax>).
       </div>
     </div>
   );

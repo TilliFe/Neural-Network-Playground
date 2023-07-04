@@ -371,7 +371,27 @@ function TensorNode({ data, isConnectable, id, modelId }) {
             <span className="custom-drag-handle" style={dragHandleStyle} />
           </div>
           <Dialog open={open} onClose={handleClose}>
-            <DialogTitle>{type}</DialogTitle>
+            <DialogTitle>
+              {type == 'mult'
+                ? 'Multiplication'
+                : type == 'add'
+                ? 'Addition'
+                : type == 'ReLU'
+                ? 'ReLU Activation'
+                : type == 'Dense'
+                ? 'Dense'
+                : type == 'softmax'
+                ? 'Softmax'
+                : type == 'CE'
+                ? 'Cross Entropy Loss'
+                : type == 'MSE'
+                ? 'Mean Squared Error Loss'
+                : type == 'isTrue'
+                ? 'Ground Truth'
+                : type == 'input'
+                ? 'Input'
+                : 'None - Simple Matrix'}
+            </DialogTitle>
             <DialogContent>
               <div
                 style={{
