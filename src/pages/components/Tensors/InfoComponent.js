@@ -113,29 +113,13 @@ const InfoDense = () => {
   );
 };
 
-const InfoAdd = () => {
-  return (
-    <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
-      The <strong>Add</strong> operation performs element-wise addition of its
-      parent nodes&apos; data. For a successful matrix addition, the shapes of
-      the parent nodes must be the same.
-      <div>
-        Mathematically, this can be represented as:
-        <MathJax>{'$$ Add(A,B) = A + B $$'}</MathJax>
-        where <MathJax inline>{'A'}</MathJax> represents the upper (left) parent
-        and <MathJax inline>{'B'}</MathJax> represents the lower (right) parent.
-      </div>
-    </div>
-  );
-};
-
 const InfoMult = () => {
   return (
     <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
       The <strong>Mult</strong> operation performs matrix multiplication of its
-      parent nodes' data. For a successful matrix multiplication, the number of
-      columns in the upper (left) parent must match the number of rows in the
-      lower (right) parent.
+      parent nodes&apos; data. For a successful matrix multiplication, the
+      number of columns in the upper (left) parent must match the number of rows
+      in the lower (right) parent.
       <div>
         Mathematically, this can be represented as:
         <MathJax>{'$$ Mult(A,B) = A * B $$'}</MathJax> where{' '}
@@ -152,6 +136,22 @@ const InfoMult = () => {
         where <MathJax inline>{'n'}</MathJax> is the number of columns in matrix{' '}
         <MathJax inline>{'A'}</MathJax> (or equivalently, the number of rows in
         matrix <MathJax inline>{'B'}</MathJax>).
+      </div>
+    </div>
+  );
+};
+
+const InfoAdd = () => {
+  return (
+    <div style={{ fontFamily: 'Roboto', fontSize: '16px', lineHeight: '1.5' }}>
+      The <strong>Add</strong> operation performs element-wise addition of its
+      parent nodes&apos; data. For a successful matrix addition, the shapes of
+      the parent nodes must be the same.
+      <div>
+        Mathematically, this can be represented as:
+        <MathJax>{'$$ Add(A,B) = A + B $$'}</MathJax>
+        where <MathJax inline>{'A'}</MathJax> represents the upper (left) parent
+        and <MathJax inline>{'B'}</MathJax> represents the lower (right) parent.
       </div>
     </div>
   );
