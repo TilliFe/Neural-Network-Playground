@@ -21,12 +21,11 @@ const style = {
   overflow: 'auto',
   padding: '15px',
   // margin: '10%',
-  
 
   // q: change the scrollbar width
   '&::-webkit-scrollbar': {
     width: '1px',
-  }
+  },
 };
 
 export default function Docs() {
