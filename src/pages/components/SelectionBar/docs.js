@@ -10,25 +10,26 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '90%',
-  height: '50%',
+  maxWidth: '800px',
+  height: '60%',
   bgcolor: 'background.paper',
-  border: '2px solid #000',
   pt: 1,
   px: 1,
   pb: 1,
   borderRadius: '15px',
-  border: '2px solid rgb(50,50,80)',
+  border: 'none',
   overflow: 'auto',
+  padding: '15px',
   // margin: '10%',
-  padding: '10px',
+  
 
   // q: change the scrollbar width
   '&::-webkit-scrollbar': {
     width: '1px',
-  },
+  }
 };
 
-export default function NestedModal() {
+export default function Docs() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => {
     setOpen(true);
@@ -40,13 +41,11 @@ export default function NestedModal() {
   return (
     <div>
       <Typography
-        variant="body1"
         color="grey.300"
         textAlign="left"
-        position="absolute"
-        bottom="14px"
-        width="90%"
-        padding="25px"
+        width="94%"
+        padding="8px"
+        zIndex={0}
       >
         <Button
           onClick={handleOpen}
@@ -54,12 +53,12 @@ export default function NestedModal() {
           sx={{
             width: '100%',
             color: 'rgb(255,255,255)',
-            backgroundColor: 'rgb(60,60,100)',
-            borderRadius: '20px',
-            fontSize: '15px',
+            backgroundColor: 'rgb(50,50,50)',
+            borderRadius: '8px',
+            fontSize: '14px',
           }}
         >
-          CoViz Docs
+          more info
         </Button>
       </Typography>
       <Modal
@@ -67,6 +66,13 @@ export default function NestedModal() {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        slotProps={{
+          backdrop: {
+            sx: {
+              backdropFilter: 'blur(4px)',
+            },
+          },
+        }}
       >
         <Box sx={{ ...style }}>
           <Typography

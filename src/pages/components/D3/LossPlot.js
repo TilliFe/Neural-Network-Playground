@@ -25,7 +25,14 @@ export default function LossPLot() {
   }, [edgesActive]);
 
   useEffect(() => {
-    const newError = { x: data.length, y: Math.min(avgError, 1.0) };
+    let newError;
+    if (data.length > 0) {
+      const lastYValues = data.slice(-5).map((d) => d.y);
+      const avgY = d3.mean([...lastYValues, Math.min(avgError, 1.0)]);
+      newError = { x: data.length, y: avgY };
+    } else {
+      newError = { x: data.length, y: Math.min(avgError, 1.0) };
+    }
     setData((data) => [...data, newError]); // spread the old array and add the new object
   }, [avgError]);
 
@@ -55,7 +62,8 @@ export default function LossPLot() {
     const lineGenerator_true = d3
       .line()
       .x((d) => xScale(d.x))
-      .y((d) => yScale(d.y));
+      .y((d) => yScale(d.y))
+      .curve(d3.curveBasis);
 
     // Append path element
     svg
@@ -85,7 +93,16 @@ export default function LossPLot() {
       .attr('transform', `translate(${margin.left}, 0)`)
       .attr('stroke-width', '0.5')
       .style('font', '7px sans-serif')
-      .call(d3.axisLeft(yScale));
+      .call(
+        d3.axisLeft(yScale).tickFormat((d) => {
+          // Use custom tick format function
+          if (d === 1) {
+            return '>1';
+          } else {
+            return d;
+          }
+        })
+      );
   }, [data]);
 
   return (

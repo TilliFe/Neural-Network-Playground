@@ -10,6 +10,8 @@ import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import Grid from '@mui/material/Grid';
 
+import Docs from './docs';
+
 const buttonStyles = {
   height: '53px',
   borderRadius: '8px',
@@ -245,11 +247,9 @@ const SelectModel = () => {
             <strong>Remove</strong> any Tensor Node or Edge between Nodes by
             double &apos;Left Click&apos; on it.
           </Typography>
-
-          <Typography color="grey.500" padding="3px" margin="7px"></Typography>
+          <Docs />
         </Stack>
       </Grid>
-
       <Grid item sx={{ height: { xs: '8%', sm: '5%', md: '3%' } }}>
         <Button
           onClick={() =>
@@ -270,7 +270,7 @@ const SelectModel = () => {
           }}
           startIcon={<GitHubIcon />}
         >
-          GitHub Docs
+          GitHub Repository
         </Button>
       </Grid>
     </Grid>

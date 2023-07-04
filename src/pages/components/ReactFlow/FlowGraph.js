@@ -737,29 +737,35 @@ export default function Flow() {
   }, [heighestId]);
 
   return (
-    <div style={{ height: '100%', width: '100%' }} ref={reactFlowWrapper}>
-      <ReactFlow
-        minZoom={0.1}
-        nodes={nodes}
-        edges={edges}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
-        onEdgeClick={onRemoveEdge}
-        onNodeClick={onRemoveNode}
-        onNodeDoubleClick={onNodeDoubleClick}
-        onEdgeDoubleClick={onEdgeDoubleClick}
-        onPaneClick={onPaneClick}
-        nodeTypes={nodeTypes}
-        style={rfStyle}
-        snapToGrid
-        snapGrid={[40, 40]}
-        edgeTypes={{ custom: CustomEdge }}
-        fitView="true"
-      >
-        <Controls />
-        <Background color="rgba(200,200,200,0.35)" size="4" variant={variant} />
-      </ReactFlow>
-    </div>
+    <>
+      <div style={{ height: '100%', width: '100%' }} ref={reactFlowWrapper}>
+        <ReactFlow
+          minZoom={0.1}
+          nodes={nodes}
+          edges={edges}
+          onNodesChange={onNodesChange}
+          onEdgesChange={onEdgesChange}
+          onConnect={onConnect}
+          onEdgeClick={onRemoveEdge}
+          onNodeClick={onRemoveNode}
+          onNodeDoubleClick={onNodeDoubleClick}
+          onEdgeDoubleClick={onEdgeDoubleClick}
+          onPaneClick={onPaneClick}
+          nodeTypes={nodeTypes}
+          style={rfStyle}
+          snapToGrid
+          snapGrid={[40, 40]}
+          edgeTypes={{ custom: CustomEdge }}
+          fitView="true"
+        >
+          <Controls />
+          <Background
+            color="rgba(200,200,200,0.35)"
+            size="4"
+            variant={variant}
+          />
+        </ReactFlow>
+      </div>
+    </>
   );
 }
