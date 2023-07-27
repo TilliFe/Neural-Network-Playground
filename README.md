@@ -9,10 +9,14 @@ You can try out CoViz by visiting the live demo at https://covizdemo.vercel.app/
 
 **Note:** CoViz requires **WebGPU** to be enabled in your browser!
 
+<img width="1368" alt="image" src="https://github.com/TilliFe/CoViz-Neural-Network-Playground/assets/93252915/51e74720-03ac-4f1f-b975-daac68bed8e1">
+
+> CoViz's user interface features a node editor, powered by ReactFlow, that allows users to easily build a Neural Network computation graph. Users can select from a range of regression and classification tasks and datasets, and train their network to learn patterns in the data.
+
+
+
 [![Explainer Video not loading!](https://github.com/TilliFe/CoViz-Neural-Network-Playground/blob/main/assets/93252915/thumbnail.png)](https://github.com/TilliFe/CoViz-Neural-Network-Playground/blob/main/assets/93252915/eed7e6e9-8d0d-4dcd-b044-613e6d8f270c.mp4)
-
-> CoViz's user interface features a node editor, powered by ReactFlow, that allows users to easily build a neural network computation graph. Users can select from a range of regression and classification tasks and datasets, and train their network to learn patterns in the data.
-
+> Explainer Video
 
 ## Getting Started
 To run CoViz locally on your machine, follow these steps:
