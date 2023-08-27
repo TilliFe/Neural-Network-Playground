@@ -25,6 +25,3 @@ To run CoViz locally on your machine, follow these steps:
 Any changes you make to the code will automatically be reflected in the browser window.
 
 **Note:** CoViz requires **WebGPU** to be enabled in your browser. In Chrome, you can enable WebGPU by going to [chrome://flags/](chrome://flags/) and searching for "WebGPU".
-
-## About
-CoViz is built as part of my bachelor's thesis. The thesis covers the theoretical foundations of building a deep learning framework, including computation graphs and automatic differentiation. You can read my thesis <a href="./public/DiCo_and_CoViz_Thesis.pdf" download>here</a>.
